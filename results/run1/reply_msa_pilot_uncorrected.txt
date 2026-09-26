@@ -1,0 +1,1906 @@
+
+Below are 80 Python programming questions. For each question, complete the function.
+Answer ALL 80 questions, in order. For each one, write its number (for example
+"Question 1") and then one Python code block containing the complete function
+(signature and body) plus any imports it needs. Do not add tests or explanations.
+
+### Question 1
+python
+
+FIX = """
+Add more test cases.
+"""
+
+def vowels_count(s):
+    """اكتب دالة تسمى vowels_count تأخذ سلسلة نصية تمثل كلمة كإدخال وتعيد عدد الحروف الصوتية في السلسلة. الحروف الصوتية في هذه الحالة هي 'a'، 'e'، 'i'، 'o'، 'u'. هنا، 'y' هو أيضًا حرف صوتي، ولكن فقط عندما يكون في نهاية الكلمة المعطاة.
+
+    مثال:
+    >>> vowels_count("abcde")
+    2
+    >>> vowels_count("ACEDY")
+    3
+    """
+
+
+### Question 2
+python
+from typing import List
+
+
+def rescale_to_unit(numbers: List[float]) -> List[float]:
+    """ عندما يتم إعطاء قائمة من الأرقام (تحتوي على على الأقل عنصرين)، يتم تطبيق تحويل خطي على تلك القائمة، بحيث يتم جعل العدد الأصغر يصبح 0 والأكبر يصبح 1.
+    >>> rescale_to_unit([1.0, 2.0, 3.0, 4.0, 5.0])
+    [0.0, 0.25, 0.5, 0.75, 1.0]
+    """
+
+
+### Question 3
+python
+
+def check_dict_case(dict):
+    """
+    بالنظر إلى قاموس، إرجاع قيمة True إذا كانت جميع المفاتيح هي سلاسل نصية في الحالة الصغيرة أو جميع المفاتيح هي سلاسل نصية في الحالة الكبيرة، وإلا فإنه يجب إرجاع False. يجب أن يعيد الدالة False إذا كان القاموس المعطى فارغًا. أمثلة:
+    check_dict_case({"a":"apple", "b":"banana"}) should return True.
+    check_dict_case({"a":"apple", "A":"banana", "B":"banana"}) should return False.
+    check_dict_case({"a":"apple", 8:"banana", "a":"apple"}) should return False.
+    check_dict_case({"Name":"John", "Age":"36", "City":"Houston"}) should return False.
+    check_dict_case({"STATE":"NC", "ZIP":"12345" }) should return True.
+    """
+
+
+### Question 4
+python
+
+def simplify(x, n):
+    """مهمتك هي تنفيذ وظيفة ستبسط التعبير
+x * n. تعيد الوظيفة True إذا كان x * n يقيم إلى عدد صحيح و False
+إلا في ذلك. كل من x و n هما تمثيل سلسلة لكسر ، ولهما التنسيق التالي ،
+<البسط>/<المقام> حيث كل من البسط والمقام هما أعداد صحيحة موجبة.
+
+    يمكنك الافتراض أن x و n هما كسور صالحة ، ولا يحتويان على الصفر كمقام.
+
+    simplify("1/5", "5/1") = True
+    simplify("1/6", "2/1") = False
+    simplify("7/10", "10/2") = False
+    """
+
+
+### Question 5
+python
+
+
+def flip_case(string: str) -> str:
+    """ لسلسلة محددة، قم بتبديل الأحرف الصغيرة إلى أحرف كبيرة والأحرف الكبيرة إلى أحرف صغيرة.
+    >>> flip_case('Hello')
+    'hELLO'
+    """
+
+
+### Question 6
+python
+
+def choose_num(x, y):
+    """هذه الدالة تأخذ رقمين موجبين x و y وتعيد أكبر عدد صحيح زوجي يقع في النطاق [x، y] بما في ذلك. إذا لم يكن هناك عدد كهذا ، يجب أن تعيد الدالة -1.
+
+    على سبيل المثال:
+    choose_num(12, 15) = 14
+    choose_num(13, 12) = -1
+    """
+
+
+### Question 7
+python
+
+def get_max_triples(n):
+    """
+    تمنحك عدد صحيح موجب n. يجب عليك إنشاء مصفوفة صحيحة a طولها n.
+        بالنسبة لكل i (1 ≤ i ≤ n) ، قيمة a [i] = i * i - i + 1.
+        إرجاع عدد الثلاثيات (a [i]، a [j]، a [k]) من a حيث i <j <k ،
+    و a [i] + a [j] + a [k] هو مضاعف للعدد 3.
+
+        مثال:
+        المدخلات: n = 5
+        الناتج: 1
+        شرح:
+        a = [1، 3، 7، 13، 21]
+        الثلاثية الوحيدة الصالحة هي (1، 7، 13).
+    """
+
+
+### Question 8
+python
+
+
+def prime_fib(n: int):
+    """
+    prime_fib يعيد العدد رقم n الذي هو عدد فيبوناتشي وهو أيضًا عدد أولي.
+    >>> prime_fib(1)
+    2
+    >>> prime_fib(2)
+    3
+    >>> prime_fib(3)
+    5
+    >>> prime_fib(4)
+    13
+    >>> prime_fib(5)
+    89
+    """
+
+
+### Question 9
+python
+
+def is_nested(string):
+    '''
+    أنشئ دالة تأخذ سلسلة نصية كمدخلات تحتوي فقط على أقواس مربعة.
+يجب أن تعيد الدالة True إذا وفقط إذا كان هناك متتالية صحيحة من الأقواس
+حيث يتم تضمين على الأقل قوس واحد في المتتالية.
+
+    is_nested('[[]]') ➞ True
+    is_nested('[]]]]]]][[[[[]') ➞ False
+    is_nested('[][]') ➞ False
+    is_nested('[]') ➞ False
+    is_nested('[[][]]') ➞ True
+    is_nested('[[]][[') ➞ True
+    '''
+
+
+### Question 10
+python
+
+def move_one_ball(arr):
+    """لدينا مصفوفة 'arr' من N أعداد صحيحة arr [1]، arr [2]، ...، arr [N]. سيتم ترتيب الأرقام في المصفوفة بشكل عشوائي. مهمتك هي تحديد ما إذا كان من الممكن الحصول على مصفوفة مرتبة بترتيب غير تنازلي عن طريق تنفيذ العملية التالية على المصفوفة المعطاة:
+    يسمح لك بتنفيذ عملية التحويل اليميني أي عدد من المرات.
+
+        تعني عملية التحويل اليميني الواحد تحويل جميع عناصر المصفوفة بمقدار واحد في الاتجاه الصحيح. سيتم نقل العنصر الأخير في المصفوفة إلى الموضع البدء في المصفوفة أي الفهرس 0.
+
+        إذا كان من الممكن الحصول على المصفوفة المرتبة بتنفيذ العملية أعلاه ، فأرجع True وإلا فأرجع False. إذا كانت المصفوفة المعطاة فارغة ، فأرجع True.
+
+        ملاحظة: يتم ضمان وجود عناصر فريدة في القائمة المعطاة.
+
+        على سبيل المثال:
+
+        move_one_ball ([3، 4، 5، 1، 2]) ==> True
+    تفسير: يمكن تحقيق الترتيب غير التنازلي للمصفوفة المعطاة بتنفيذ 2 عمليات تحويل يمينية.
+    move_one_ball ([3، 5، 4، 1، 2]) ==> False
+    تفسير: لا يمكن الحصول على ترتيب غير تنازلي للمصفوفة المعطاة بتنفيذ أي عدد من عمليات التحويل اليميني.
+                
+    """
+
+
+### Question 11
+python
+
+def get_row(lst, x):
+    """
+    يتم تزويدك ببيانات ثنائية الأبعاد، على شكل قوائم متداخلة،
+    والتي تشبه المصفوفة، ولكن على عكس المصفوفات،
+    قد تحتوي كل صف على عدد مختلف من الأعمدة.
+    بالنظر إلى lst و x عدد صحيح، ابحث عن الأعداد الصحيحة x في القائمة،
+    وأرجع قائمة من الأزواج، [(x1، y1)، (x2، y2) ...] بحيث
+    يكون كل زوج إحداثيات - (صف، أعمدة)، بدءًا من 0.
+    فرز الإحداثيات في البداية حسب الصفوف بترتيب تصاعدي.
+    أيضًا، فرز إحداثيات الصف حسب الأعمدة بترتيب تنازلي.
+    
+    أمثلة:
+    get_row([
+      [1,2,3,4,5,6],
+      [1,2,3,4,1,6],
+      [1,2,3,4,5,1]
+    ], 1) == [(0, 0), (1, 4), (1, 0), (2, 5), (2, 0)]
+    get_row([], 1) == []
+    get_row([[], [1], [1, 2, 3]], 3) == [(2, 2)]
+    """
+
+
+### Question 12
+python
+
+def check_if_last_char_is_a_letter(txt):
+    '''
+    أنشئ دالة تعيد True إذا كان الحرف الأخير في السلسلة المعطاة حرفًا أبجديًا وليس جزءًا من كلمة، وتعيد False في الحالة الأخرى.
+ملاحظة: "الكلمة" هي مجموعة من الأحرف مفصولة بمسافة.
+
+    أمثلة:
+    check_if_last_char_is_a_letter("apple pie") ➞ False
+    check_if_last_char_is_a_letter("apple pi e") ➞ True
+    check_if_last_char_is_a_letter("apple pi e ") ➞ False
+    check_if_last_char_is_a_letter("") ➞ False 
+    '''
+
+
+### Question 13
+python
+
+def words_string(s):
+    """
+    سيتم إعطاؤك سلسلة من الكلمات مفصولة بفواصل أو مسافات. مهمتك هي تقسيم السلسلة إلى كلمات وإرجاع مصفوفة من الكلمات.
+
+    على سبيل المثال:
+    words_string("Hi, my name is John") == ["Hi", "my", "name", "is", "John"]
+    words_string("One, two, three, four, five, six") == ["One", "two", "three", "four", "five", "six"]
+    """
+
+
+### Question 14
+python
+
+def right_angle_triangle(a, b, c):
+    '''
+    بالنظر إلى أطوال الأضلاع الثلاثة لمثلث. إرجاع قيمة صحيحة (True) إذا كانت الأضلاع الثلاثة تشكل مثلثاً قائم الزاوية، وإرجاع قيمة خاطئة (False) في الحالات الأخرى. يعتبر المثلث القائم الزاوية هو مثلث يحتوي على زاوية قائمة أو بزاوية 90 درجة. مثال:
+    right_angle_triangle(3, 4, 5) == True
+    right_angle_triangle(1, 2, 3) == False
+    '''
+
+
+### Question 15
+python
+
+
+def fibfib(n: int):
+    """تتبع سلسلة أرقام فيبفيب هي سلسلة مشابهة لسلسلة فيبوناتشي التي تعرف على النحو التالي:
+    فيبفيب(0) == 0
+    فيبفيب(1) == 0
+    فيبفيب(2) == 1
+    فيبفيب(n) == فيبفيب(n-1) + فيبفيب(n-2) + فيبفيب(n-3).
+    يرجى كتابة وظيفة لحساب العنصر الثالث عشر بكفاءة في سلسلة أرقام فيبفيب.
+    >>> fibfib(1)
+    0
+    >>> fibfib(5)
+    4
+    >>> fibfib(8)
+    24
+    """
+
+
+### Question 16
+python
+
+def add_elements(arr, k):
+    """
+    عندما يتم إعطاء مصفوفة غير فارغة من الأعداد الصحيحة arr وعدد صحيح k ، يتم إرجاع مجموع العناصر التي لديها رقمين على الأكثر من أول k عنصرًا في arr.
+
+        مثال:
+
+            المدخلات: arr = [111،21،3،4000،5،6،7،8،9] ، k = 4
+        الإخراج: 24 # مجموع 21 + 3
+
+        القيود:
+        1. 1 <= len(arr) <= 100
+        2. 1 <= k <= len(arr)
+    """
+
+
+### Question 17
+python
+
+def even_odd_palindrome(n):
+    """
+    بالنظر إلى عدد صحيح موجب n ، يرجع tuple الذي يحتوي على عدد palindrome الصحيحة الزوجية والفردية التي تقع ضمن النطاق (1، n) ، شاملاً.
+
+    مثال 1:
+
+        الإدخال: 3
+    النتيجة: (1، 2)
+    الشرح:
+    عدد palindrome الصحيحة هي 1 و 2 و 3. واحد منهم زوجي ، واثنان منهم فرديان.
+
+    مثال 2:
+
+        الإدخال: 12
+    النتيجة: (4، 6)
+    الشرح:
+    عدد palindrome الصحيحة هي 1 و 2 و 3 و 4 و 5 و 6 و 7 و 8 و 9 و 11. أربعة منهم زوجيون ، و 6 منهم فرديون.
+
+    ملاحظة:
+    1. 1 <= n <= 10^3
+    2. tuple المرجع يحتوي على عدد palindrome الصحيحة الزوجية والفردية على التوالي.
+    """
+
+
+### Question 18
+python
+
+
+def get_positive(l: list):
+    """ارجع فقط الأرقام الإيجابية في القائمة.
+    >>> get_positive([-1, 2, -4, 5, 6])
+    [2, 5, 6]
+    >>> get_positive([5, 3, -5, 2, -3, 3, 9, 0, 123, 1, -10])
+    [5, 3, 2, 3, 9, 123, 1]
+    """
+
+
+### Question 19
+python
+
+def exchange(lst1, lst2):
+    """في هذه المشكلة، ستقوم بتنفيذ وظيفة تأخذ قائمتين من الأرقام، وتحدد ما إذا كان من الممكن القيام بتبادل العناصر بينهما لجعل lst1 قائمة من الأرقام الزوجية فقط. لا يوجد حد لعدد العناصر المتبادلة بين lst1 و lst2. إذا كان من الممكن تبادل العناصر بين lst1 و lst2 لجعل جميع عناصر lst1 زوجية، فأرجع "YES". وإلا، أرجع "NO". على سبيل المثال: exchange([1، 2، 3، 4]، [1، 2، 3، 4]) => "YES" exchange([1، 2، 3، 4]، [1، 5، 3، 4]) => "NO" يفترض أن تكون القوائم المدخلة غير فارغة.
+    """
+
+
+### Question 20
+python
+
+def Strongest_Extension(class_name, extensions):
+    """سيتم تزويدك بإسم الصف (سلسلة نصية) وقائمة من الامتدادات.
+يجب استخدام الامتدادات لتحميل صفوف إضافية إلى الصف. قوة الامتداد هي كما يلي: دع CAP يكون عدد الأحرف الكبيرة في اسم الامتداد، ودع SM يكون عدد الأحرف الصغيرة في اسم الامتداد، يتم إعطاء القوة بواسطة الكسر CAP - SM. يجب عليك العثور على الامتداد الأقوى وإرجاع سلسلة بهذا الشكل: ClassName.StrongestExtensionName.
+إذا كان هناك اثنين أو أكثر من الامتدادات بنفس القوة، يجب اختيار الذي يأتي أولاً في القائمة.
+على سبيل المثال، إذا تم تزويدك بـ "Slices" كصف وقائمة من الامتدادات: ['SErviNGSliCes'، 'Cheese'، 'StuFfed']، فيجب عليك إرجاع 'Slices.SErviNGSliCes' لأن 'SErviNGSliCes' هو الامتداد الأقوى (قوته -1).
+مثال:
+    for Strongest_Extension('my_class', ['AA', 'Be', 'CC']) == 'my_class.AA'
+    """
+
+
+### Question 21
+python
+
+def double_the_difference(lst):
+    '''
+    عندما يتم إعطاء قائمة من الأرقام، يتم إرجاع مجموع مربعات الأرقام في القائمة التي هي فردية. يتم تجاهل الأرقام التي هي سلبية أو غير صحيحة.
+
+    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10
+double_the_difference([-1, -2, 0]) == 0
+double_the_difference([9, -2]) == 81
+double_the_difference([0]) == 0
+
+    إذا كانت القائمة المدخلة فارغة، يتم إرجاع 0.
+    '''
+
+
+### Question 22
+python
+
+def closest_integer(value):
+    '''
+    أنشئ دالة تأخذ قيمة (سلسلة نصية) تمثل رقمًا وتعيد أقرب عدد صحيح إليه. إذا كان الرقم على بعد مسافة متساوية من عددين صحيحين ، فقم بتقريبه بعيدًا عن الصفر.
+
+        أمثلة
+    >>> closest_integer("10")
+    10
+    >>> closest_integer("15.3")
+    15
+
+    Note:
+    Rounding away from zero means that if the given number is equidistant
+    from two integers, the one you should return is the one that is the
+    farthest from zero. For example closest_integer("14.5") should
+    return 15 and closest_integer("-14.5") should return -15.
+    '''
+
+
+### Question 23
+python
+
+
+def sum_squares(lst):
+    """تمنحك قائمة من الأرقام.
+تحتاج إلى إرجاع مجموع الأرقام المربعة في القائمة المعطاة،
+قم بتقريب كل عنصر في القائمة إلى العدد الصحيح الأعلى (السقف) أولاً.
+أمثلة:
+للقائمة = [1،2،3] يجب أن يكون الإخراج 14
+للقائمة = [1،4،9] يجب أن يكون الإخراج 98
+للقائمة = [1،3،5،7] يجب أن يكون الإخراج 84
+للقائمة = [1.4،4.2،0] يجب أن يكون الإخراج 29
+للقائمة = [-2.4،1،1] يجب أن يكون الإخراج 6
+    
+
+    """
+
+
+### Question 24
+python
+
+def specialFilter(nums):
+    """اكتب دالة تأخذ مصفوفة من الأرقام كمدخلات وتعيد عدد العناصر في المصفوفة التي تزيد عن 10 وكلاً من الأرقام الأولى والأخيرة للعدد فردية (1، 3، 5، 7، 9). على سبيل المثال:
+    specialFilter([15, -73, 14, -15]) => 1 
+    specialFilter([33, -2, -3, 45, 21, 109]) => 2
+    """
+
+
+### Question 25
+python
+from typing import List, Optional
+
+
+def longest(strings: List[str]) -> Optional[str]:
+    """ من بين قائمة السلاسل، ارجع الأطول. ارجع الأولى في حالة وجود عدة سلاسل بنفس الطول. ارجع قيمة فارغة في حالة أن القائمة الدخلية فارغة.
+    >>> longest([])
+
+    >>> longest(['a', 'b', 'c'])
+    'a'
+    >>> longest(['a', 'bb', 'ccc'])
+    'ccc'
+    """
+
+
+### Question 26
+python
+
+def generate_integers(a, b):
+    """
+    بالنظر إلى عددين صحيحين موجبين a و b، يتم إرجاع الأرقام الزوجية بين a و b بترتيب تصاعدي.
+
+    على سبيل المثال:
+    generate_integers(2, 8) => [2, 4, 6, 8]
+    generate_integers(8, 2) => [2, 4, 6, 8]
+    generate_integers(10, 14) => []
+    """
+
+
+### Question 27
+python
+
+
+def remove_vowels(text):
+    """
+    remove_vowels هي وظيفة تأخذ سلسلة نصية وتعيد سلسلة نصية بدون حروف العلة.
+    >>> remove_vowels('')
+    ''
+    >>> remove_vowels("abcdef\nghijklm")
+    'bcdf\nghjklm'
+    >>> remove_vowels('abcdef')
+    'bcdf'
+    >>> remove_vowels('aaaaa')
+    ''
+    >>> remove_vowels('aaBAA')
+    'B'
+    >>> remove_vowels('zbcd')
+    'zbcd'
+    """
+
+
+### Question 28
+python
+
+def is_bored(S):
+    """
+    سيتم تزويدك بسلسلة من الكلمات، ومهمتك هي عدد الملل. الملل هو جملة تبدأ بكلمة "I". تتم فصل الجمل بواسطة '.' أو '?' أو '!'.
+
+    على سبيل المثال:
+    >>> is_bored("Hello world")
+    0
+    >>> is_bored("The sky is blue. The sun is shining. I love this weather")
+    1
+    """
+
+
+### Question 29
+python
+
+def largest_smallest_integers(lst):
+    '''
+    أنشئ دالة تعيد tuple (a، b) ، حيث يكون 'a' هو أكبر الأعداد الصحيحة السالبة ، و 'b' هو أصغر الأعداد الصحيحة الموجبة في القائمة. إذا لم يكن هناك أعداد صحيحة سالبة أو موجبة ، فأرجعها كـ None.
+
+        Examples:
+    largest_smallest_integers([2, 4, 1, 3, 5, 7]) == (None, 1)
+    largest_smallest_integers([]) == (None, None)
+    largest_smallest_integers([0]) == (None, None)
+    '''
+
+
+### Question 30
+python
+from typing import List
+
+
+def string_xor(a: str, b: str) -> str:
+    """ المدخلات هي سلسلتان a و b تتكونان فقط من 1 و 0.
+    قم بتنفيذ عملية XOR الثنائية على هذه المدخلات وإرجاع النتيجة أيضًا كسلسلة.
+    >>> string_xor('010', '110')
+    '100'
+    """
+
+
+### Question 31
+python
+
+def maximum(arr, k):
+    """
+    بالنظر إلى مصفوفة arr من الأعداد الصحيحة وعدد صحيح موجب k ، يتم إرجاع قائمة مرتبة بطول k مع أكبر k أرقام في arr.
+
+        مثال 1:
+
+            المدخلات: arr = [-3، -4، 5]، k = 3
+        الناتج: [-4، -3، 5]
+
+        مثال 2:
+
+            المدخلات: arr = [4، -4، 4]، k = 2
+        الناتج: [4، 4]
+
+        مثال 3:
+
+            المدخلات: arr = [-3، 2، 1، 2، -1، -2، 1]، k = 1
+        الناتج: [2]
+
+        ملاحظة:
+        1. سيكون طول المصفوفة في نطاق [1، 1000].
+        2. ستكون العناصر في المصفوفة في نطاق [-1000، 1000].
+        3. 0 <= k <= len (arr)
+    """
+
+
+### Question 32
+python
+
+def next_smallest(lst):
+    """
+    تمنحك قائمة من الأعداد الصحيحة.
+اكتب دالة next_smallest() التي تعيد العنصر الثاني الأصغر في القائمة.
+إرجاع قيمة فارغة إذا لم يكن هناك عنصر من هذا النوع.
+    
+    next_smallest([1, 2, 3, 4, 5]) == 2
+    next_smallest([5, 1, 4, 3, 2]) == 2
+    next_smallest([]) == None
+    next_smallest([1, 1]) == None
+    """
+
+
+### Question 33
+python
+
+def is_happy(s):
+    """يتم إعطاؤك سلسلة s.
+مهمتك هي التحقق مما إذا كانت السلسلة سعيدة أم لا.
+تعتبر السلسلة سعيدة إذا كان طولها على الأقل 3 وكانت كل 3 أحرف متتالية مختلفة.
+على سبيل المثال:
+    is_happy(a) => False
+    is_happy(aa) => False
+    is_happy(abcd) => True
+    is_happy(aabb) => False
+    is_happy(adb) => True
+    is_happy(xyy) => False
+    """
+
+
+### Question 34
+python
+
+
+def largest_prime_factor(n: int):
+    """"ارجع أكبر عامل أولي لـ n. افترض أن n> 1 وليس عددًا أوليًا."
+    >>> largest_prime_factor(13195)
+    29
+    >>> largest_prime_factor(2048)
+    2
+    """
+
+
+### Question 35
+python
+from typing import List, Tuple
+
+
+def sum_product(numbers: List[int]) -> Tuple[int, int]:
+    """ لقائمة معينة من الأعداد الصحيحة، أرجع tuple يتكون من مجموع وضرب جميع الأعداد في القائمة.
+يجب أن يكون مجموع القائمة الفارغة يساوي 0 وضربها الفارغ يساوي 1.
+    >>> sum_product([])
+    (0, 1)
+    >>> sum_product([1, 2, 3, 4])
+    (10, 24)
+    """
+
+
+### Question 36
+python
+
+
+def add(x: int, y: int):
+    """إضافة رقمين x و y
+    >>> add(2, 3)
+    5
+    >>> add(5, 7)
+    12
+    """
+
+
+### Question 37
+python
+
+def solve(s):
+    """تمنحك سلسلة s.
+    إذا كان s[i] حرفًا، فعكس حالته من الحروف الصغيرة إلى الحروف الكبيرة أو العكس،
+    وإلا فاحتفظ به كما هو.
+    إذا لم تحتوي السلسلة على أحرف، فعكس السلسلة.
+    يجب أن تعيد الدالة السلسلة الناتجة.
+    أمثلة
+    solve("1234") = "4321"
+    solve("ab") = "AB"
+    solve("#a@C") = "#A@c"
+    """
+
+
+### Question 38
+python
+
+
+def is_prime(n):
+    """إرجاع صحيح إذا كان الرقم المعطى هو عدد أولي، وإلا فهو خطأ.
+    >>> is_prime(6)
+    False
+    >>> is_prime(101)
+    True
+    >>> is_prime(11)
+    True
+    >>> is_prime(13441)
+    True
+    >>> is_prime(61)
+    True
+    >>> is_prime(4)
+    False
+    >>> is_prime(1)
+    False
+    """
+
+
+### Question 39
+python
+
+def triangle_area(a, b, c):
+    '''
+    بالنظر إلى أطوال الأضلاع الثلاثة لمثلث. يرجى إرجاع مساحة المثلث مستديرة إلى 2 نقطة عشرية إذا كانت الأضلاع الثلاثة تشكل مثلثًا صالحًا. وإلا، يرجى إرجاع -1. تشكل الأضلاع الثلاثة مثلثًا صالحًا عندما يكون مجموع أي ضلعين أكبر من الضلع الثالث. مثال:
+    triangle_area(3, 4, 5) == 6.00
+    triangle_area(1, 2, 10) == -1
+    '''
+
+
+### Question 40
+python
+
+def rounded_avg(n, m):
+    """يتم إعطاؤك عددين صحيحين موجبين n و m ، ومهمتك هي حساب المتوسط ​​للأعداد الصحيحة من n إلى m (بما في ذلك n و m). قم بتقريب الإجابة إلى أقرب عدد صحيح وتحويلها إلى النظام الثنائي. إذا كان n أكبر من m ، فأرجع -1. مثال:
+    rounded_avg(1, 5) => "0b11"
+    rounded_avg(7, 5) => -1
+    rounded_avg(10, 20) => "0b1111"
+    rounded_avg(20, 33) => "0b11010"
+    """
+
+
+### Question 41
+python
+
+
+def below_threshold(l: list, t: int):
+    """"ارجع صحيح إذا كانت جميع الأرقام في القائمة l أقل من الحد t."
+    >>> below_threshold([1, 2, 4, 10], 100)
+    True
+    >>> below_threshold([1, 20, 4, 10], 5)
+    False
+    """
+
+
+### Question 42
+python
+
+def numerical_letter_grade(grades):
+    """هذا هو الأسبوع الأخير من الفصل الدراسي ويجب على المعلم إعطاء الدرجات للطلاب. كان المعلم يقوم بإنشاء خوارزمية خاصة به لتقييم الدرجات. المشكلة الوحيدة هي أنها فقدت الكود الذي استخدمته للتقييم. لقد قدمت لك قائمة بمعدلات النجاح لبعض الطلاب ويجب عليك كتابة وظيفة يمكنها إخراج قائمة بالدرجات الحرفية باستخدام الجدول التالي:
+             GPA       |    Letter grade
+              4.0                A+
+            > 3.7                A 
+            > 3.3                A- 
+            > 3.0                B+
+            > 2.7                B 
+            > 2.3                B-
+            > 2.0                C+
+            > 1.7                C
+            > 1.3                C-
+            > 1.0                D+ 
+            > 0.7                D 
+            > 0.0                D-
+              0.0                E
+    
+
+        مثال:
+    grade_equation([4.0, 3, 1.7, 2, 3.5]) ==> ['A+', 'B', 'C-', 'C', 'A-']
+    """
+
+
+### Question 43
+python
+
+def prime_length(string):
+    """اكتب دالة تأخذ سلسلة نصية وتعيد True إذا كان طول السلسلة عددًا أوليًا أو False في حالة عكس ذلك
+    أمثلة
+    prime_length('Hello') == True
+    prime_length('abcdcba') == True
+    prime_length('kittens') == True
+    prime_length('orange') == False
+    """
+
+
+### Question 44
+python
+from typing import List
+
+
+def sort_numbers(numbers: str) -> str:
+    """ المدخلات هي سلسلة من الأرقام المفصولة بمسافة من 'zero' إلى 'nine'.
+الخيارات الصالحة هي 'zero'، 'one'، 'two'، 'three'، 'four'، 'five'، 'six'، 'seven'، 'eight' و 'nine'.
+إرجاع السلسلة مع الأرقام مرتبة من الأصغر إلى الأكبر.
+    >>> sort_numbers('three one five')
+    'one three five'
+    """
+
+
+### Question 45
+python
+
+
+def fib(n: int):
+    """إرجاع العدد الفيبوناتشي رقم n.
+    >>> fib(10)
+    55
+    >>> fib(1)
+    1
+    >>> fib(8)
+    21
+    """
+
+
+### Question 46
+python
+
+
+def greatest_common_divisor(a: int, b: int) -> int:
+    """ إرجاع أكبر مقسوم مشترك بين عددين a و b
+    >>> greatest_common_divisor(3, 5)
+    1
+    >>> greatest_common_divisor(25, 15)
+    5
+    """
+
+
+### Question 47
+python
+
+def string_to_md5(text):
+    """
+    بالنظر إلى سلسلة 'text'، أرجع سلسلة مكافئة لها بتشفير md5.
+إذا كانت 'text' فارغة، أرجع قيمة فارغة.
+
+    >>> string_to_md5('Hello world') == '3e25960a79dbc69b674cd4ec67a72c62'
+    """
+
+
+### Question 48
+python
+
+def decimal_to_binary(decimal):
+    """سيتم إعطاؤك رقمًا بالشكل العشري ومهمتك هي تحويله إلى الشكل الثنائي. يجب أن تعيد الدالة سلسلة نصية، حيث يمثل كل حرف رقمًا ثنائيًا. سيكون كل حرف في السلسلة هو '0' أو '1'.
+
+    سيكون هناك حرفان إضافيان 'db' في بداية ونهاية السلسلة. الحروف الإضافية موجودة للمساعدة في التنسيق.
+
+    أمثلة:
+    decimal_to_binary(15)   # returns "db1111db"
+    decimal_to_binary(32)   # returns "db100000db"
+    """
+
+
+### Question 49
+python
+
+def f(n):
+    """ قم بتنفيذ الدالة f التي تأخذ n كمعلمة،
+وترجع قائمة بحجم n، بحيث يكون قيمة العنصر في المؤشر i هو عاملي الرقم i إذا كان i فرديًا،
+أو مجموع الأرقام من 1 إلى i في حالة أخرى.
+i يبدأ من 1.
+عاملي الرقم i هو الضرب من الأرقام من 1 إلى i (1 * 2 * ... * i).
+مثال:
+    f(5) == [1, 2, 6, 24, 15]
+    """
+
+
+### Question 50
+python
+
+
+def sum_to_n(n: int):
+    """sum_to_n هي وظيفة تجمع الأرقام من 1 إلى n.
+    >>> sum_to_n(30)
+    465
+    >>> sum_to_n(100)
+    5050
+    >>> sum_to_n(5)
+    15
+    >>> sum_to_n(10)
+    55
+    >>> sum_to_n(1)
+    1
+    """
+
+
+### Question 51
+python
+
+def reverse_delete(s,c):
+    """المهمة
+نحن نحصل على سلسلتين s و c ، يجب عليك حذف جميع الأحرف في s التي تساوي أي حرف في c
+ثم التحقق مما إذا كانت سلسلة النتيجة هي palindrome.
+يسمى سلسلة palindrome إذا قرأت بالمعكوس نفسها.
+يجب عليك إرجاع tuple يحتوي على سلسلة النتيجة و True / False للتحقق.
+مثال
+بالنسبة لـ s = "abcde" ، c = "ae" ، يجب أن يكون النتيجة ('bcd'،False)
+بالنسبة لـ s = "abcdef" ، c = "b" يجب أن يكون النتيجة ('acdef'،False)
+بالنسبة لـ s = "abcdedcba" ، c = "ab" يجب أن يكون النتيجة ('cdedc'،True)
+    """
+
+
+### Question 52
+python
+
+
+def common(l1: list, l2: list):
+    """إرجاع العناصر المشتركة الفريدة المرتبة لاثنين من القوائم.
+    >>> common([1, 4, 3, 34, 653, 2, 5], [5, 7, 1, 5, 9, 653, 121])
+    [1, 5, 653]
+    >>> common([5, 3, 2, 8], [3, 2])
+    [2, 3]
+
+    """
+
+
+### Question 53
+python
+
+
+def is_palindrome(text: str):
+    """
+    يتحقق مما إذا كانت السلسلة المعطاة هي باليندروم.
+    >>> is_palindrome('')
+    True
+    >>> is_palindrome('aba')
+    True
+    >>> is_palindrome('aaaaa')
+    True
+    >>> is_palindrome('zbcd')
+    False
+    """
+
+
+### Question 54
+python
+
+
+def derivative(xs: list):
+    """ xs تمثل معاملات متعددة الحدود.
+xs[0] + xs[1] * x + xs[2] * x^2 + ....
+إرجاع المشتقة لهذه المعادلة متعددة الحدود بنفس الصيغة.
+    >>> derivative([3, 1, 2, 4, 5])
+    [1, 4, 12, 20]
+    >>> derivative([1, 2, 3])
+    [2, 6]
+    """
+
+
+### Question 55
+python
+
+def int_to_mini_roman(number):
+    """
+    بالنظر إلى عدد صحيح موجب، احصل على ما يعادله من الأرقام الرومانية كسلسلة نصية، وارجعها بأحرف صغيرة.
+القيود: 1 <= num <= 1000
+
+    أمثلة:
+    >>> int_to_mini_roman(19) == 'xix'
+    >>> int_to_mini_roman(152) == 'clii'
+    >>> int_to_mini_roman(426) == 'cdxxvi'
+    """
+
+
+### Question 56
+python
+
+
+def same_chars(s0: str, s1: str):
+    """
+    تحقق مما إذا كانت كلمتان لديهما نفس الأحرف.
+    >>> same_chars('eabcdzzzz', 'dddzzzzzzzddeddabc')
+    True
+    >>> same_chars('abcd', 'dddddddabc')
+    True
+    >>> same_chars('dddddddabc', 'abcd')
+    True
+    >>> same_chars('eabcd', 'dddddddabc')
+    False
+    >>> same_chars('abcd', 'dddddddabce')
+    False
+    >>> same_chars('eabcdzzzz', 'dddzzzzzzzddddabc')
+    False
+    """
+
+
+### Question 57
+python
+
+def digits(n):
+    """بالنظر إلى عدد صحيح موجب n، يتم إرجاع حاصل ضرب الأرقام الفردية.
+إذا كانت جميع الأرقام زوجية، يتم إرجاع القيمة 0.
+على سبيل المثال:
+    digits(1)  == 1
+    digits(4)  == 0
+    digits(235) == 15
+    """
+
+
+### Question 58
+python
+
+def is_multiply_prime(a):
+    """اكتب دالة تعيد القيمة الصحيحة إذا كان الرقم المعطى هو ضرب 3 أعداد أولية، وإلا فهي تعيد القيمة الخاطئة. علمًا بأن (أ) أقل من 100. 
+
+    مثال:
+    is_multiply_prime(30) == True
+    30 = 2 * 3 * 5
+    """
+
+
+### Question 59
+python
+
+def make_a_pile(n):
+    """
+    بالنظر إلى عدد صحيح موجب n، يجب عليك إنشاء كومة من n مستويات من الحجارة.
+المستوى الأول يحتوي على n حجرًا.
+عدد الحجارة في المستوى التالي هو:
+- العدد الفردي التالي إذا كان n فرديًا.
+- العدد الزوجي التالي إذا كان n زوجيًا.
+يرجع عدد الحجارة في كل مستوى في قائمة، حيث يمثل العنصر في المؤشر i عدد الحجارة في المستوى (i + 1).
+
+    أمثلة:
+    >>> make_a_pile(3)
+    [3, 5, 7]
+    """
+
+
+### Question 60
+python
+
+def tri(n):
+    """الجميع يعرف سلسلة فيبوناتشي، وقد درسها الرياضيون بعمق في القرون القليلة الماضية. ومع ذلك، ما لا يعرفه الناس هو سلسلة تريبوناتشي. تعرف سلسلة تريبوناتشي بالتكرار:
+tri(1) = 3
+tri(n) = 1 + n / 2، إذا كان n زوجيًا.
+tri(n) = tri(n - 1) + tri(n - 2) + tri(n + 1)، إذا كان n فرديًا.
+على سبيل المثال:
+tri(2) = 1 + (2 / 2) = 2
+tri(4) = 3
+tri(3) = tri(2) + tri(1) + tri(4)
+= 2 + 3 + 3 = 8
+يتم إعطاؤك عدد صحيح غير سلبي n ، ويجب عليك إرجاع قائمة بأول n + 1 عددًا في سلسلة تريبوناتشي.
+أمثلة:
+tri(3) = [1، 3، 2، 8]
+    """
+
+
+### Question 61
+python
+
+def max_fill(grid, capacity):
+    import math
+    """
+    يتم تزويدك بشبكة مستطيلة من الآبار. تمثل كل صف بئرًا ويمثل الرقم 1 في الصف وحدة واحدة من الماء. لكل بئر دلو مقابل يمكن استخدامه لاستخراج الماء منه، وجميع الدلاء لديها نفس السعة. مهمتك هي استخدام الدلاء لتفريغ الآبار. أخرج عدد المرات التي تحتاج فيها إلى خفض الدلاء.
+
+    مثال 1:
+    المدخلات:
+        grid: [[0،0،1،0]، [0،1،0،0]، [1،1،1،1]]
+        bucket_capacity: 1
+    الناتج: 6
+
+    مثال 2:
+    المدخلات:
+        grid: [[0،0،1،1]، [0،0،0،0]، [1،1،1،1]، [0،1،1،1]]
+        bucket_capacity: 2
+    الناتج: 5
+
+    مثال 3:
+    المدخلات:
+        grid: [[0،0،0]، [0،0،0]]
+        bucket_capacity: 5
+    الناتج: 0
+
+    القيود:
+    * جميع الآبار لديها نفس الطول
+    * 1 <= grid.length <= 10^2
+    * 1 <= grid [:،1].length <= 10^2
+    * grid [i] [j] -> 0 | 1
+    * 1 <= capacity <= 10
+    """
+
+
+### Question 62
+python
+
+def order_by_points(nums):
+    """
+    اكتب دالة تقوم بفرز القائمة المعطاة من الأعداد الصحيحة بترتيب تصاعدي وفقًا لمجموع أرقامها. ملاحظة: إذا كان هناك عدة عناصر بمجموع أرقام مماثل ، فقم بترتيبها بناءً على مؤشرها في القائمة الأصلية.
+
+    على سبيل المثال:
+    >>> order_by_points([1, 11, -1, -11, -12]) == [-1, -11, 1, -12, 11]
+    >>> order_by_points([]) == []
+    """
+
+
+### Question 63
+python
+
+def cycpattern_check(a , b):
+    """يتم تزويدك بكلمتين. تحتاج إلى إرجاع True إذا كانت الكلمة الثانية أو أي من دوراناتها هي سلسلة فرعية (substring) في الكلمة الأولى.
+    cycpattern_check("abcd","abd") => False
+    cycpattern_check("hello","ell") => True
+    cycpattern_check("whassup","psus") => False
+    cycpattern_check("abab","baa") => True
+    cycpattern_check("efef","eeff") => False
+    cycpattern_check("himenss","simen") => True
+
+    """
+
+
+### Question 64
+python
+
+
+def triples_sum_to_zero(l: list):
+    """
+    تأخذ triples_sum_to_zero قائمة من الأعداد الصحيحة كمدخلات.
+    يعيد True إذا كان هناك ثلاثة عناصر متميزة في القائمة تجمع إلى الصفر ، و False في الحالة الأخرى.
+
+    >>> triples_sum_to_zero([1, 3, 5, 0])
+    False
+    >>> triples_sum_to_zero([1, 3, -2, 1])
+    True
+    >>> triples_sum_to_zero([1, 2, 3, 7])
+    False
+    >>> triples_sum_to_zero([2, 4, -5, 3, 9, 7])
+    True
+    >>> triples_sum_to_zero([1])
+    False
+    """
+
+
+### Question 65
+python
+
+def solve(N):
+    """بالنظر إلى عدد صحيح موجب N، يتم إرجاع إجمالي مجموع أرقامه في النظام الثنائي.
+
+    مثال:
+    بالنسبة لـ N = 1000، سيكون مجموع الأرقام 1 ويجب أن يكون الإخراج "1".
+    بالنسبة لـ N = 150، سيكون مجموع الأرقام 6 ويجب أن يكون الإخراج "110".
+    بالنسبة لـ N = 147، سيكون مجموع الأرقام 12 ويجب أن يكون الإخراج "1100".
+
+    المتغيرات:
+    @N عدد صحيح
+         القيود: 0 ≤ N ≤ 10000.
+الإخراج:
+     سلسلة من الأرقام الثنائية.
+    """
+
+
+### Question 66
+python
+
+
+def fib4(n: int):
+    """تتمثل متتابعة أرقام Fib4 في متتابعة مشابهة لمتتابعة فيبوناتشي والتي تعرف على النحو التالي:
+    fib4(0) -> 0
+    fib4(1) -> 0
+    fib4(2) -> 2
+    fib4(3) -> 0
+    fib4(n) -> fib4(n-1) + fib4(n-2) + fib4(n-3) + fib4(n-4).
+    يرجى كتابة وظيفة لحساب العنصر الثامن من متتابعة أرقام Fib4 بكفاءة. لا تستخدم الاستدعاء العكسي.
+    >>> fib4(5)
+    4
+    >>> fib4(6)
+    8
+    >>> fib4(7)
+    14
+    """
+
+
+### Question 67
+python
+
+
+def unique(l: list):
+    """إرجاع عناصر فريدة مرتبة في قائمة
+    >>> unique([5, 3, 5, 2, 3, 3, 9, 0, 123])
+    [0, 2, 3, 5, 9, 123]
+    """
+
+
+### Question 68
+python
+from typing import List
+
+
+def below_zero(operations: List[int]) -> bool:
+    """ تم تزويدك بقائمة عمليات الإيداع والسحب على حساب بنكي يبدأ برصيد صفري. مهمتك هي الكشف عما إذا كان رصيد الحساب ينخفض دون الصفر في أي نقطة، وفي ذلك الوقت يجب أن تعيد الدالة True. وإلا يجب أن تعيد False.
+    >>> below_zero([1, 2, 3])
+    False
+    >>> below_zero([1, 2, -4, 5])
+    True
+    """
+
+
+### Question 69
+python
+
+def will_it_fly(q,w):
+    '''
+    اكتب دالة تعيد القيمة صحيحة إذا كان الكائن q سيطير، وخطأ في حالة عدم ذلك.
+سيطير الكائن q إذا كان متوازنًا (هو قائمة متناظرة) ومجموع عناصره أقل من أو يساوي الحد الأقصى الممكن للوزن w.
+
+    مثال:
+will_it_fly([1، 2]، 5) ➞ خطأ
+# 1 + 2 أقل من الحد الأقصى الممكن للوزن ، لكنه غير متوازن.
+
+    will_it_fly([3، 2، 3]، 1) ➞ خطأ
+# إنه متوازن ، لكن 3 + 2 + 3 أكثر من الحد الأقصى الممكن للوزن.
+
+    will_it_fly([3، 2، 3]، 9) ➞ صحيح
+# 3 + 2 + 3 أقل من الحد الأقصى الممكن للوزن ، وهو متوازن.
+
+    will_it_fly([3]، 5) ➞ صحيح
+# 3 أقل من الحد الأقصى الممكن للوزن ، وهو متوازن.
+    '''
+
+
+### Question 70
+python
+
+def intersection(interval1, interval2):
+    """يتم تزويدك بنطاقين،
+حيث يتكون كل نطاق من زوج من الأعداد الصحيحة. على سبيل المثال، النطاق = (البداية، النهاية) = (1، 2).
+النطاقات المعطاة مغلقة مما يعني أن النطاق (البداية، النهاية)
+يشمل كل من البداية والنهاية.
+يفترض لكل نطاق معطى أن بدايته أقل أو يساوي نهايته.
+مهمتك هي تحديد ما إذا كان طول تقاطع هذين النطاقين هو عدد أولي.
+على سبيل المثال، تقاطع النطاقات (1، 3)، (2، 4) هو (2، 3)
+الذي يبلغ طوله 1، وهو ليس عددًا أوليًا.
+إذا كان طول التقاطع عددًا أوليًا، فأرجع "YES"،
+وإلا، أرجع "NO".
+إذا لم يتقاطع النطاقان، فأرجع "NO".
+
+    [المدخلات/المخرجات] الأمثلة:
+    intersection((1, 2), (2, 3)) ==> "NO"
+    intersection((-1, 1), (0, 4)) ==> "NO"
+    intersection((-3, -1), (-5, 5)) ==> "YES"
+    """
+
+
+### Question 71
+python
+
+def can_arrange(arr):
+    """أنشئ دالة تعيد أكبر فهرس لعنصر لا يزيد عن العنصر الذي يسبقه. إذا لم يوجد عنصر كهذا ، فأرجع -1. لن يحتوي المصفوفة المعطاة على قيم مكررة.
+
+        أمثلة:
+    can_arrange([1,2,4,3,5]) = 3
+    can_arrange([1,2,3]) = -1
+    """
+
+
+### Question 72
+python
+
+def bf(planet1, planet2):
+    '''
+    هناك ثمانية كواكب في نظامنا الشمسي: الأقرب إلى الشمس هو عطارد (Mercury)، الكوكب التالي هو الزهرة (Venus)، ثم الأرض (Earth)، المريخ (Mars)، المشتري (Jupiter)، زحل (Saturn)، أورانوس (Uranus)، نبتون (Neptune).
+اكتب دالة تأخذ اسمي كوكب كسلسلة نصية planet1 و planet2. يجب أن تعيد الدالة tuple يحتوي على جميع الكواكب التي تقع مداراتها بين مدار planet1 ومدار planet2، مرتبة حسب القرب من الشمس. يجب أن تعيد الدالة tuple فارغًا إذا كان planet1 أو planet2 ليستا أسماء كواكب صحيحة.
+أمثلة
+    bf("Jupiter", "Neptune") ==> ("Saturn", "Uranus")
+    bf("Earth", "Mercury") ==> ("Venus")
+    bf("Mercury", "Uranus") ==> ("Venus", "Earth", "Mars", "Jupiter", "Saturn")
+    '''
+
+
+### Question 73
+python
+
+def select_words(s, n):
+    """بالنظر إلى سلسلة s وعدد طبيعي n، تم تكليفك بتنفيذ وظيفة تعيد قائمة بجميع الكلمات من السلسلة s التي تحتوي بالضبط على n حروف ساكنة، بالترتيب الذي تظهر به هذه الكلمات في السلسلة s. إذا كانت السلسلة s فارغة ، يجب أن تعيد الوظيفة قائمة فارغة. ملاحظة: يمكنك الافتراض بأن سلسلة الإدخال تحتوي فقط على الحروف والمسافات.
+    أمثلة:
+    select_words("Mary had a little lamb", 4) ==> ["little"]
+    select_words("Mary had a little lamb", 3) ==> ["Mary", "lamb"]
+    select_words("simple white space", 2) ==> []
+    select_words("Hello world", 4) ==> ["world"]
+    select_words("Uncle sam", 3) ==> ["Uncle"]
+    """
+
+
+### Question 74
+python
+
+def x_or_y(n, x, y):
+    """برنامج بسيط يجب أن يعيد قيمة x إذا كان n عددًا أولًا ويجب أن يعيد قيمة y في حالة أخرى.
+
+    أمثلة:
+    for x_or_y(7, 34, 12) == 34
+    for x_or_y(15, 8, 5) == 5
+    
+    """
+
+
+### Question 75
+python
+
+def search(lst):
+    '''
+    يتم تزويدك بقائمة غير فارغة من الأعداد الصحيحة الإيجابية. يجب إرجاع أكبر عدد صحيح يكون أكبر من الصفر وله تكرار أكبر من أو يساوي قيمة العدد الصحيح نفسه. تكرار العدد الصحيح هو عدد مرات ظهوره في القائمة. إذا لم يكن هناك قيمة كهذه ، فأرجع -1. أمثلة:
+        search([4, 1, 2, 2, 3, 1]) == 2
+        search([1, 2, 2, 3, 3, 3, 4, 4, 4]) == 3
+        search([5, 5, 4, 4, 4]) == -1
+    '''
+
+
+### Question 76
+python
+
+
+def pairs_sum_to_zero(l):
+    """
+    يأخذ pairs_sum_to_zero قائمة من الأعداد الصحيحة كمدخلات.
+يعيد True إذا كان هناك عنصران متميزان في القائمة يجمعان إلى الصفر ، و False في الحالة الأخرى.
+    >>> pairs_sum_to_zero([1, 3, 5, 0])
+    False
+    >>> pairs_sum_to_zero([1, 3, -2, 1])
+    False
+    >>> pairs_sum_to_zero([1, 2, 3, 7])
+    False
+    >>> pairs_sum_to_zero([2, 4, -5, 3, 5, 7])
+    True
+    >>> pairs_sum_to_zero([1])
+    False
+    """
+
+
+### Question 77
+python
+
+def words_in_sentence(sentence):
+    """
+    يتم تزويدك بسلسلة تمثل جملة،
+الجملة تحتوي على بعض الكلمات المفصولة بمسافة،
+ويجب عليك إرجاع سلسلة تحتوي على الكلمات من الجملة الأصلية،
+التي تحتوي على أعداد أولية من الأحرف،
+يجب أن يكون ترتيب الكلمات في السلسلة الجديدة هو نفس الترتيب الأصلي.
+
+    مثال 1:
+    المدخلات: الجملة = "This is a test"
+    الناتج: "is"
+
+    مثال 2:
+    المدخلات: الجملة = "lets go for swimming"
+    الناتج: "go for"
+
+    القيود:
+    * 1 <= len(sentence) <= 100
+    * تحتوي الجملة على أحرف فقط
+    """
+
+
+### Question 78
+python
+
+def special_factorial(n):
+    """العامل البرازيلي يعرف على أنه:
+    brazilian_factorial(n) = n! * (n-1)! * (n-2)! * ... * 1!
+    حيث n > 0
+
+        على سبيل المثال:
+    >>> special_factorial(4)
+    288
+
+    The function will receive an integer as input and should return the special
+    factorial of this integer.
+    """
+
+
+### Question 79
+python
+
+
+def skjkasdkd(lst):
+    """تمنحك قائمة من الأعداد الصحيحة.
+    تحتاج إلى العثور على أكبر قيمة أولية وإرجاع مجموع أرقامها.
+
+        أمثلة:
+    For lst = [0,3,2,1,3,5,7,4,5,5,5,2,181,32,4,32,3,2,32,324,4,3] the output should be 10
+    For lst = [1,0,1,8,2,4597,2,1,3,40,1,2,1,2,4,2,5,1] the output should be 25
+    For lst = [1,3,1,32,5107,34,83278,109,163,23,2323,32,30,1,9,3] the output should be 13
+    For lst = [0,724,32,71,99,32,6,0,5,91,83,0,5,6] the output should be 11
+    For lst = [0,81,12,3,1,21] the output should be 3
+    For lst = [0,8,1,2,1,7] the output should be 7
+    """
+
+
+### Question 80
+python
+
+
+def median(l: list):
+    """إرجاع الوسيط لعناصر القائمة l.
+    >>> median([3, 1, 2, 4, 5])
+    3
+    >>> median([-10, 4, 6, 1000, 10, 20])
+    15.0
+    """
+
+Question 1
+def vowels_count(s):
+    return sum(c.lower() in "aeiou" or (c.lower() == "y" and i == len(s) - 1)
+               for i, c in enumerate(s))
+Question 2
+from typing import List
+
+def rescale_to_unit(numbers: List[float]) -> List[float]:
+    mn, mx = min(numbers), max(numbers)
+    if mx == mn:
+        return [0.0 for _ in numbers]
+    return [(x - mn) / (mx - mn) for x in numbers]
+Question 3
+def check_dict_case(dict):
+    if not dict:
+        return False
+    keys = list(dict.keys())
+    if not all(isinstance(k, str) for k in keys):
+        return False
+    return all(k.islower() for k in keys) or all(k.isupper() for k in keys)
+Question 4
+def simplify(x, n):
+    x_num, x_den = map(int, x.split("/"))
+    n_num, n_den = map(int, n.split("/"))
+    return (x_num * n_num) % (x_den * n_den) == 0
+Question 5
+def flip_case(string: str) -> str:
+    return string.swapcase()
+Question 6
+def choose_num(x, y):
+    if x > y:
+        return -1
+    result = y if y % 2 == 0 else y - 1
+    return result if result >= x else -1
+Question 7
+def get_max_triples(n):
+    counts = [0, 0, 0]
+    for i in range(1, n + 1):
+        counts[(i * i - i + 1) % 3] += 1
+
+    total = 0
+    total += counts[0] * (counts[0] - 1) * (counts[0] - 2) // 6
+    total += counts[1] * (counts[1] - 1) * (counts[1] - 2) // 6
+    total += counts[2] * (counts[2] - 1) * (counts[2] - 2) // 6
+    total += counts[0] * counts[1] * counts[2]
+    total += counts[0] * counts[1] * (counts[1] - 1) // 2
+    total += counts[0] * counts[2] * (counts[2] - 1) // 2
+    total += counts[1] * counts[2] * (counts[2] - 1) // 2
+    return total
+Question 8
+def prime_fib(n: int):
+    def is_prime(x):
+        if x < 2:
+            return False
+        d = 2
+        while d * d <= x:
+            if x % d == 0:
+                return False
+            d += 1
+        return True
+
+    a, b = 0, 1
+    count = 0
+    while count < n:
+        a, b = b, a + b
+        if is_prime(a):
+            count += 1
+    return a
+Question 9
+def is_nested(string):
+    depth = 0
+    for c in string:
+        if c == "[":
+            depth += 1
+        else:
+            if depth > 1:
+                return True
+            depth -= 1
+    return False
+Question 10
+def move_one_ball(arr):
+    if not arr:
+        return True
+    drops = sum(arr[i] > arr[(i + 1) % len(arr)] for i in range(len(arr)))
+    return drops <= 1
+Question 11
+def get_row(lst, x):
+    result = []
+    for i, row in enumerate(lst):
+        cols = [j for j, value in enumerate(row) if value == x]
+        result.extend((i, j) for j in reversed(cols))
+    return result
+Question 12
+def check_if_last_char_is_a_letter(txt):
+    if not txt or txt[-1] == " ":
+        return False
+    return txt[-1].isalpha() and (len(txt) == 1 or txt[-2] == " ")
+Question 13
+def words_string(s):
+    return s.replace(",", " ").split()
+Question 14
+def right_angle_triangle(a, b, c):
+    sides = sorted((a, b, c))
+    return sides[0] > 0 and sides[0] + sides[1] > sides[2] and \
+           sides[0] ** 2 + sides[1] ** 2 == sides[2] ** 2
+Question 15
+def fibfib(n: int):
+    if n == 0 or n == 1:
+        return 0
+    if n == 2:
+        return 1
+
+    a, b, c = 0, 0, 1
+    for _ in range(3, n + 1):
+        a, b, c = b, c, a + b + c
+    return c
+Question 16
+def add_elements(arr, k):
+    return sum(x for x in arr[:k] if len(str(abs(x))) <= 2)
+Question 17
+def even_odd_palindrome(n):
+    even = odd = 0
+    for i in range(1, n + 1):
+        if str(i) == str(i)[::-1]:
+            if i % 2 == 0:
+                even += 1
+            else:
+                odd += 1
+    return even, odd
+Question 18
+def get_positive(l: list):
+    return [x for x in l if x > 0]
+Question 19
+def exchange(lst1, lst2):
+    odd1 = sum(x % 2 for x in lst1)
+    even2 = sum(x % 2 == 0 for x in lst2)
+    return "YES" if even2 >= odd1 else "NO"
+Question 20
+def Strongest_Extension(class_name, extensions):
+    strongest = max(extensions, key=lambda x: sum(c.isupper() for c in x) -
+                                      sum(c.islower() for c in x))
+    return f"{class_name}.{strongest}"
+Question 21
+def double_the_difference(lst):
+    return sum(x * x for x in lst if isinstance(x, int) and x >= 0 and x % 2 == 1)
+Question 22
+from decimal import Decimal, ROUND_HALF_UP
+
+def closest_integer(value):
+    return int(Decimal(value).quantize(Decimal("1"), rounding=ROUND_HALF_UP))
+Question 23
+import math
+
+def sum_squares(lst):
+    return sum(math.ceil(x) ** 2 for x in lst)
+Question 24
+def specialFilter(nums):
+    return sum(
+        1 for n in nums
+        if n > 10 and str(n)[0] in "13579" and str(n)[-1] in "13579"
+    )
+Question 25
+from typing import List, Optional
+
+def longest(strings: List[str]) -> Optional[str]:
+    if not strings:
+        return None
+    return max(strings, key=len)
+Question 26
+def generate_integers(a, b):
+    lo, hi = sorted((a, b))
+    return list(range(lo if lo % 2 == 0 else lo + 1, hi + 1, 2))
+Question 27
+def remove_vowels(text):
+    return "".join(c for c in text if c.lower() not in "aeiou")
+Question 28
+def is_bored(S):
+    sentences = S.replace("?", ".").replace("!", ".").split(".")
+    return sum(1 for sentence in sentences if sentence.strip().startswith("I"))
+Question 29
+def largest_smallest_integers(lst):
+    negatives = [x for x in lst if isinstance(x, int) and x < 0]
+    positives = [x for x in lst if isinstance(x, int) and x > 0]
+    return (
+        max(negatives) if negatives else None,
+        min(positives) if positives else None
+    )
+Question 30
+from typing import List
+
+def string_xor(a: str, b: str) -> str:
+    return "".join("1" if x != y else "0" for x, y in zip(a, b))
+Question 31
+def maximum(arr, k):
+    return sorted(arr)[-k:] if k else []
+Question 32
+def next_smallest(lst):
+    values = sorted(set(lst))
+    return values[1] if len(values) >= 2 else None
+Question 33
+def is_happy(s):
+    return len(s) >= 3 and all(s[i] != s[i + 1] and s[i] != s[i + 2] and
+                                s[i + 1] != s[i + 2]
+                                for i in range(len(s) - 2))
+Question 34
+def largest_prime_factor(n: int):
+    largest = 1
+    d = 2
+    while d * d <= n:
+        while n % d == 0:
+            largest = d
+            n //= d
+        d += 1
+    return n if n > 1 else largest
+Question 35
+from typing import List, Tuple
+
+def sum_product(numbers: List[int]) -> Tuple[int, int]:
+    total = 0
+    product = 1
+    for x in numbers:
+        total += x
+        product *= x
+    return total, product
+Question 36
+def add(x: int, y: int):
+    return x + y
+Question 37
+def solve(s):
+    if not any(c.isalpha() for c in s):
+        return s[::-1]
+    return "".join(c.swapcase() if c.isalpha() else c for c in s)
+Question 38
+def is_prime(n):
+    if n < 2:
+        return False
+    if n % 2 == 0:
+        return n == 2
+    d = 3
+    while d * d <= n:
+        if n % d == 0:
+            return False
+        d += 2
+    return True
+Question 39
+import math
+
+def triangle_area(a, b, c):
+    if a <= 0 or b <= 0 or c <= 0 or a + b <= c or a + c <= b or b + c <= a:
+        return -1
+    s = (a + b + c) / 2
+    return round(math.sqrt(s * (s - a) * (s - b) * (s - c)), 2)
+Question 40
+def rounded_avg(n, m):
+    if n > m:
+        return -1
+    total = (n + m) * (m - n + 1) / 2
+    avg = total / (m - n + 1)
+    rounded = int(avg + 0.5)
+    return bin(rounded)
+Question 41
+def below_threshold(l: list, t: int):
+    return all(x < t for x in l)
+Question 42
+def numerical_letter_grade(grades):
+    result = []
+    for g in grades:
+        if g == 4.0:
+            result.append("A+")
+        elif g > 3.7:
+            result.append("A")
+        elif g > 3.3:
+            result.append("A-")
+        elif g > 3.0:
+            result.append("B+")
+        elif g > 2.7:
+            result.append("B")
+        elif g > 2.3:
+            result.append("B-")
+        elif g > 2.0:
+            result.append("C+")
+        elif g > 1.7:
+            result.append("C")
+        elif g > 1.3:
+            result.append("C-")
+        elif g > 1.0:
+            result.append("D+")
+        elif g > 0.7:
+            result.append("D")
+        elif g > 0.0:
+            result.append("D-")
+        else:
+            result.append("E")
+    return result
+Question 43
+def prime_length(string):
+    n = len(string)
+    if n < 2:
+        return False
+    d = 2
+    while d * d <= n:
+        if n % d == 0:
+            return False
+        d += 1
+    return True
+Question 44
+from typing import List
+
+def sort_numbers(numbers: str) -> str:
+    names = ["zero", "one", "two", "three", "four",
+             "five", "six", "seven", "eight", "nine"]
+    return " ".join(sorted(numbers.split(), key=names.index))
+Question 45
+def fib(n: int):
+    a, b = 0, 1
+    for _ in range(n):
+        a, b = b, a + b
+    return a
+Question 46
+def greatest_common_divisor(a: int, b: int) -> int:
+    a, b = abs(a), abs(b)
+    while b:
+        a, b = b, a % b
+    return a
+Question 47
+import hashlib
+
+def string_to_md5(text):
+    if not text:
+        return ""
+    return hashlib.md5(text.encode()).hexdigest()
+Question 48
+def decimal_to_binary(decimal):
+    return f"db{bin(decimal)[2:]}db"
+Question 49
+def f(n):
+    result = []
+    factorial = 1
+    for i in range(1, n + 1):
+        if i % 2 == 1:
+            factorial *= i
+            result.append(factorial)
+        else:
+            result.append(i * (i + 1) // 2)
+    return result
+Question 50
+def sum_to_n(n: int):
+    return n * (n + 1) // 2
+Question 51
+def reverse_delete(s, c):
+    result = "".join(ch for ch in s if ch not in c)
+    return result, result == result[::-1]
+Question 52
+def common(l1: list, l2: list):
+    return sorted(set(l1) & set(l2))
+Question 53
+def is_palindrome(text: str):
+    return text == text[::-1]
+Question 54
+def derivative(xs: list):
+    return [i * xs[i] for i in range(1, len(xs))]
+Question 55
+def int_to_mini_roman(number):
+    values = [
+        (1000, "m"), (900, "cm"), (500, "d"), (400, "cd"),
+        (100, "c"), (90, "xc"), (50, "l"), (40, "xl"),
+        (10, "x"), (9, "ix"), (5, "v"), (4, "iv"), (1, "i")
+    ]
+    result = []
+    for value, symbol in values:
+        count, number = divmod(number, value)
+        result.append(symbol * count)
+    return "".join(result)
+Question 56
+def same_chars(s0: str, s1: str):
+    return set(s0) == set(s1)
+Question 57
+def digits(n):
+    result = 1
+    found = False
+    for digit in str(n):
+        d = int(digit)
+        if d % 2:
+            result *= d
+            found = True
+    return result if found else 0
+Question 58
+def is_multiply_prime(a):
+    count = 0
+    d = 2
+    while d * d <= a and count < 3:
+        while a % d == 0:
+            a //= d
+            count += 1
+        d += 1
+    if a > 1:
+        count += 1
+    return count == 3 and a == 1
+Question 59
+def make_a_pile(n):
+    return [n + 2 * i for i in range(n)]
+Question 60
+def tri(n):
+    values = [0] * (n + 1)
+    if n >= 1:
+        values[1] = 3
+    for i in range(2, n + 1):
+        if i % 2 == 0:
+            values[i] = 1 + i // 2
+        else:
+            values[i] = values[i - 1] + values[i - 2] + values[i + 1] if i + 1 <= n else 0
+    return values
+Question 61
+def max_fill(grid, capacity):
+    import math
+    return sum(math.ceil(sum(row) / capacity) for row in grid)
+Question 62
+def order_by_points(nums):
+    def digit_sum(n):
+        return sum(int(c) for c in str(abs(n)))
+    return sorted(nums, key=digit_sum)
+Question 63
+def cycpattern_check(a, b):
+    return any(rotation in a for i in range(len(b))
+               for rotation in [b[i:] + b[:i]])
+Question 64
+def triples_sum_to_zero(l: list):
+    seen = set()
+    for i in range(len(l)):
+        seen.clear()
+        for j in range(i + 1, len(l)):
+            needed = -(l[i] + l[j])
+            if needed in seen:
+                return True
+            seen.add(l[j])
+    return False
+Question 65
+def solve(N):
+    return bin(sum(int(bit) for bit in bin(N)[2:]))[2:]
+Question 66
+def fib4(n: int):
+    values = [0, 0, 2, 0]
+    if n < 4:
+        return values[n]
+    for _ in range(4, n + 1):
+        values.append(sum(values[-4:]))
+    return values[n]
+Question 67
+def unique(l: list):
+    return sorted(set(l))
+Question 68
+from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    balance = 0
+    for operation in operations:
+        balance += operation
+        if balance < 0:
+            return True
+    return False
+Question 69
+def will_it_fly(q, w):
+    return q == q[::-1] and sum(q) <= w
+Question 70
+def intersection(interval1, interval2):
+    start = max(interval1[0], interval2[0])
+    end = min(interval1[1], interval2[1])
+    if start > end:
+        return "NO"
+
+    length = end - start
+
+    if length < 2:
+        return "NO"
+    d = 2
+    while d * d <= length:
+        if length % d == 0:
+            return "NO"
+        d += 1
+    return "YES"
+Question 71
+def can_arrange(arr):
+    for i in range(1, len(arr)):
+        if arr[i] <= arr[i - 1]:
+            return i
+    return -1
+Question 72
+def bf(planet1, planet2):
+    planets = ["Mercury", "Venus", "Earth", "Mars",
+               "Jupiter", "Saturn", "Uranus", "Neptune"]
+    if planet1 not in planets or planet2 not in planets:
+        return ()
+    i, j = planets.index(planet1), planets.index(planet2)
+    if i > j:
+        i, j = j, i
+    return tuple(planets[i + 1:j])
+Question 73
+def select_words(s, n):
+    vowels = set("aeiou")
+    result = []
+    for word in s.split():
+        consonants = sum(c.lower() not in vowels for c in word)
+        if consonants == n:
+            result.append(word)
+    return result
+Question 74
+def x_or_y(n, x, y):
+    if n < 2:
+        return y
+    if n == 2:
+        return x
+    d = 2
+    while d * d <= n:
+        if n % d == 0:
+            return y
+        d += 1
+    return x
+Question 75
+from collections import Counter
+
+def search(lst):
+    counts = Counter(lst)
+    candidates = [x for x, count in counts.items() if x > 0 and count >= x]
+    return max(candidates) if candidates else -1
+Question 76
+def pairs_sum_to_zero(l):
+    seen = set()
+    for x in l:
+        if -x in seen:
+            return True
+        seen.add(x)
+    return False
+Question 77
+def words_in_sentence(sentence):
+    def is_prime(n):
+        if n < 2:
+            return False
+        d = 2
+        while d * d <= n:
+            if n % d == 0:
+                return False
+            d += 1
+        return True
+
+    return " ".join(word for word in sentence.split() if is_prime(len(word)))
+Question 78
+def special_factorial(n):
+    result = 1
+    factorial = 1
+    for i in range(1, n + 1):
+        factorial *= i
+        result *= factorial
+    return result
+Question 79
+def skjkasdkd(lst):
+    def is_prime(n):
+        if n < 2:
+            return False
+        if n % 2 == 0:
+            return n == 2
+        d = 3
+        while d * d <= n:
+            if n % d == 0:
+                return False
+            d += 2
+        return True
+
+    primes = [x for x in lst if is_prime(x)]
+    return sum(int(c) for c in str(max(primes)))
+Question 80
+def median(l: list):
+    values = sorted(l)
+    n = len(values)
+    mid = n // 2
+    if n % 2:
+        return values[mid]
+    return (values[mid - 1] + values[mid]) / 2
+

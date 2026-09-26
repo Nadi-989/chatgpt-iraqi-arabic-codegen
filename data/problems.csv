@@ -1,0 +1,1410 @@
+﻿task_id,entry_point,english_description,msa_description,msa_reviewed,literal_warning,iraqi_description,iraqi_writer,dialect_level,meaning_verified,notes
+python/0,below_zero,"You're given a list of deposit and withdrawal operations on a bank account that starts with
+    zero balance. Your task is to detect if at any point the balance of account fallls below zero, and
+    at that point function should return True. Otherwise it should return False.
+    >>> below_zero([1, 2, 3])
+    False
+    >>> below_zero([1, 2, -4, 5])
+    True",تم تزويدك بقائمة عمليات الإيداع والسحب على حساب بنكي يبدأ برصيد صفري. مهمتك هي الكشف عما إذا كان رصيد الحساب ينخفض دون الصفر في أي نقطة، وفي ذلك الوقت يجب أن تعيد الدالة True. وإلا يجب أن تعيد False.,,,ينطوك ليستة بيها عمليات إيداع وسحب على حساب بنك يبدي رصيده من صفر. شغلك تشوف إذا الرصيد نزل تحت الصفر بأي لحظة، وإذا نزل الفنكشن ترجّع True. وإذا ما نزل ترجّع False.,Claude draft; reviewed by the author (native Iraqi speaker),medium,yes,
+python/1,sum_product,"For a given list of integers, return a tuple consisting of a sum and a product of all the integers in a list.
+    Empty sum should be equal to 0 and empty product should be equal to 1.
+    >>> sum_product([])
+    (0, 1)
+    >>> sum_product([1, 2, 3, 4])
+    (10, 24)","لقائمة معينة من الأعداد الصحيحة، أرجع tuple يتكون من مجموع وضرب جميع الأعداد في القائمة.
+يجب أن يكون مجموع القائمة الفارغة يساوي 0 وضربها الفارغ يساوي 1.",,,"ينطوك ليستة أرقام صحيحة، رجّع tuple بيه مجموع كل الأرقام وحاصل ضربهم.
+إذا الليستة فارغة، المجموع يكون 0 والضرب يكون 1.",Claude draft; reviewed by the author (native Iraqi speaker),medium,yes,
+python/2,string_xor,"Input are two strings a and b consisting only of 1s and 0s.
+    Perform binary XOR on these inputs and return result also as a string.
+    >>> string_xor('010', '110')
+    '100'","المدخلات هي سلسلتان a و b تتكونان فقط من 1 و 0.
+    قم بتنفيذ عملية XOR الثنائية على هذه المدخلات وإرجاع النتيجة أيضًا كسلسلة.",,,"المدخلات سترنكين a و b بيهم بس 1 و 0.
+    سوّي عليهم XOR ورجّع النتيجة هم سترنك.",Claude draft; reviewed by the author (native Iraqi speaker),light,yes,
+python/3,longest,"Out of list of strings, return the longest one. Return the first one in case of multiple
+    strings of the same length. Return null in case the input list is empty.
+    >>> longest([])
+
+    >>> longest(['a', 'b', 'c'])
+    'a'
+    >>> longest(['a', 'bb', 'ccc'])
+    'ccc'",من بين قائمة السلاسل، ارجع الأطول. ارجع الأولى في حالة وجود عدة سلاسل بنفس الطول. ارجع None في حالة أن القائمة الدخلية فارغة.,,,من ليستة سترنكات، رجّع أطول واحد. إذا اكو أكثر من واحد بنفس الطول، رجّع أولهم. وإذا الليستة فارغة رجّع None.,Claude draft; reviewed by the author (native Iraqi speaker),light,yes,literal_warning checked: English literals are in the examples; no change | MSA corrected: ارجع قيمة فارغة في حالة -> ارجع None في حالة
+python/4,greatest_common_divisor,"Return a greatest common divisor of two integers a and b
+    >>> greatest_common_divisor(3, 5)
+    1
+    >>> greatest_common_divisor(25, 15)
+    5",إرجاع أكبر مقسوم مشترك بين عددين a و b,,,رجّع القاسم المشترك الأكبر للرقمين a و b,Claude draft; reviewed by the author (native Iraqi speaker),light,yes,
+python/5,sort_numbers,"Input is a space-delimited string of numberals from 'zero' to 'nine'.
+    Valid choices are 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight' and 'nine'.
+    Return the string with numbers sorted from smallest to largest
+    >>> sort_numbers('three one five')
+    'one three five'","المدخلات هي سلسلة من الأرقام المفصولة بمسافة من 'zero' إلى 'nine'.
+الخيارات الصالحة هي 'zero'، 'one'، 'two'، 'three'، 'four'، 'five'، 'six'، 'seven'، 'eight' و 'nine'.
+إرجاع السلسلة مع الأرقام مرتبة من الأصغر إلى الأكبر.",,,"المدخل سترنك بيه أرقام مكتوبة بالحروف ومفصولة بمسافات، من 'zero' لحد 'nine'.
+الكلمات المسموحة هي 'zero'، 'one'، 'two'، 'three'، 'four'، 'five'، 'six'، 'seven'، 'eight' و 'nine'.
+رجّع السترنك والأرقام مرتبة من الأصغر للأكبر.",Claude draft; reviewed by the author (native Iraqi speaker),medium,yes,"MSA corrected: ""صفر"" إلى ""تسعة"" -> 'zero' إلى 'nine'; ""صفر""، ""واحد""، ""اثنان""، ""ثلاثة""، ""أربعة""، ""خمسة""، ""ستة""، ""سبعة""، ""ثمانية"" و ""تسعة"" -> 'zero'، 'one'، 'two'، 'three'، 'four'، 'five'، 'six'، 'seven'، 'eight' و 'nine'"
+python/6,rescale_to_unit,"Given list of numbers (of at least two elements), apply a linear transform to that list,
+    such that the smallest number will become 0 and the largest will become 1
+    >>> rescale_to_unit([1.0, 2.0, 3.0, 4.0, 5.0])
+    [0.0, 0.25, 0.5, 0.75, 1.0]",عندما يتم إعطاء قائمة من الأرقام (تحتوي على على الأقل عنصرين)، يتم تطبيق تحويل خطي على تلك القائمة، بحيث يتم جعل العدد الأصغر يصبح 0 والأكبر يصبح 1.,,,عندك ليستة أرقام (بيها عنصرين على الأقل)، سوّيلها تحويل خطي بحيث أصغر رقم يصير 0 وأكبر رقم يصير 1.,Claude draft; reviewed by the author (native Iraqi speaker),light,yes,
+python/7,flip_case,"For a given string, flip lowercase characters to uppercase and uppercase to lowercase.
+    >>> flip_case('Hello')
+    'hELLO'",لسلسلة محددة، قم بتبديل الأحرف الصغيرة إلى أحرف كبيرة والأحرف الكبيرة إلى أحرف صغيرة.,,,عندك سترنك، الحروف الصغيرة سوّيها كبيرة، والكبيرة سوّيها صغيرة.,Claude draft; reviewed by the author (native Iraqi speaker),light,yes,literal_warning checked: English literals are in the examples; no change
+python/8,get_positive,"Return only positive numbers in the list.
+    >>> get_positive([-1, 2, -4, 5, 6])
+    [2, 5, 6]
+    >>> get_positive([5, 3, -5, 2, -3, 3, 9, 0, 123, 1, -10])
+    [5, 3, 2, 3, 9, 123, 1]",ارجع فقط الأرقام الإيجابية في القائمة.,,,رجّع بس الأرقام الموجبة اللي بالليستة.,Claude draft; reviewed by the author (native Iraqi speaker),light,yes,
+python/9,is_prime,"Return true if a given number is prime, and false otherwise.
+    >>> is_prime(6)
+    False
+    >>> is_prime(101)
+    True
+    >>> is_prime(11)
+    True
+    >>> is_prime(13441)
+    True
+    >>> is_prime(61)
+    True
+    >>> is_prime(4)
+    False
+    >>> is_prime(1)
+    False",إرجاع صحيح إذا كان الرقم المعطى هو عدد أولي، وإلا فهو خطأ.,,,رجّع True إذا الرقم اللي ينطوك عدد أولي، وإذا لا رجّع False.,Claude draft; reviewed by the author (native Iraqi speaker),light,yes,
+python/10,unique,"Return sorted unique elements in a list
+    >>> unique([5, 3, 5, 2, 3, 3, 9, 0, 123])
+    [0, 2, 3, 5, 9, 123]",إرجاع عناصر فريدة مرتبة في قائمة,,,رجّع عناصر الليستة بدون تكرار ومرتبة,Claude draft; reviewed by the author (native Iraqi speaker),light,yes,
+python/11,prime_fib,"prime_fib returns n-th number that is a Fibonacci number and it's also prime.
+    >>> prime_fib(1)
+    2
+    >>> prime_fib(2)
+    3
+    >>> prime_fib(3)
+    5
+    >>> prime_fib(4)
+    13
+    >>> prime_fib(5)
+    89",prime_fib يعيد العدد رقم n الذي هو عدد فيبوناتشي وهو أيضًا عدد أولي.,,,prime_fib ترجّع الرقم رقم n اللي يكون من أرقام فيبوناتشي وبنفس الوقت عدد أولي.,Claude draft; reviewed by the author (native Iraqi speaker),light,yes,
+python/12,triples_sum_to_zero,"triples_sum_to_zero takes a list of integers as an input.
+    it returns True if there are three distinct elements in the list that
+    sum to zero, and False otherwise.
+
+    >>> triples_sum_to_zero([1, 3, 5, 0])
+    False
+    >>> triples_sum_to_zero([1, 3, -2, 1])
+    True
+    >>> triples_sum_to_zero([1, 2, 3, 7])
+    False
+    >>> triples_sum_to_zero([2, 4, -5, 3, 9, 7])
+    True
+    >>> triples_sum_to_zero([1])
+    False","تأخذ triples_sum_to_zero قائمة من الأعداد الصحيحة كمدخلات.
+    يعيد True إذا كان هناك ثلاثة عناصر متميزة في القائمة تجمع إلى الصفر ، و False في الحالة الأخرى.",,,"triples_sum_to_zero تاخذ ليستة أرقام صحيحة.
+    ترجّع True إذا اكو بالليستة ثلاث عناصر مختلفة مجموعهم صفر، وإذا لا ترجّع False.",Claude draft; reviewed by the author (native Iraqi speaker),medium,yes,
+python/13,pairs_sum_to_zero,"pairs_sum_to_zero takes a list of integers as an input.
+    it returns True if there are two distinct elements in the list that
+    sum to zero, and False otherwise.
+    >>> pairs_sum_to_zero([1, 3, 5, 0])
+    False
+    >>> pairs_sum_to_zero([1, 3, -2, 1])
+    False
+    >>> pairs_sum_to_zero([1, 2, 3, 7])
+    False
+    >>> pairs_sum_to_zero([2, 4, -5, 3, 5, 7])
+    True
+    >>> pairs_sum_to_zero([1])
+    False","يأخذ pairs_sum_to_zero قائمة من الأعداد الصحيحة كمدخلات.
+يعيد True إذا كان هناك عنصران متميزان في القائمة يجمعان إلى الصفر ، و False في الحالة الأخرى.",,,"pairs_sum_to_zero تاخذ ليستة أرقام صحيحة.
+ترجّع True إذا اكو بالليستة عنصرين مختلفين مجموعهم صفر، وإذا لا ترجّع False.",Claude draft; reviewed by the author (native Iraqi speaker),medium,yes,
+python/14,fib4,"The Fib4 number sequence is a sequence similar to the Fibbonacci sequnece that's defined as follows:
+    fib4(0) -> 0
+    fib4(1) -> 0
+    fib4(2) -> 2
+    fib4(3) -> 0
+    fib4(n) -> fib4(n-1) + fib4(n-2) + fib4(n-3) + fib4(n-4).
+    Please write a function to efficiently compute the n-th element of the fib4 number sequence.  Do not use recursion.
+    >>> fib4(5)
+    4
+    >>> fib4(6)
+    8
+    >>> fib4(7)
+    14","تتمثل متتابعة أرقام Fib4 في متتابعة مشابهة لمتتابعة فيبوناتشي والتي تعرف على النحو التالي:
+    fib4(0) -> 0
+    fib4(1) -> 0
+    fib4(2) -> 2
+    fib4(3) -> 0
+    fib4(n) -> fib4(n-1) + fib4(n-2) + fib4(n-3) + fib4(n-4).
+    يرجى كتابة وظيفة لحساب العنصر رقم n من متتابعة أرقام Fib4 بكفاءة. لا تستخدم الاستدعاء العكسي.",,,"متسلسلة Fib4 تشبه فيبوناتشي، وتنعرف هيج:
+    fib4(0) -> 0
+    fib4(1) -> 0
+    fib4(2) -> 2
+    fib4(3) -> 0
+    fib4(n) -> fib4(n-1) + fib4(n-2) + fib4(n-3) + fib4(n-4).
+    اكتب فنكشن تحسب العنصر رقم n من متسلسلة fib4 وتكون سريعة. لا تستعمل recursion.",Claude draft; reviewed by the author (native Iraqi speaker),medium,yes,MSA corrected: لحساب العنصر الثامن من متتابعة -> لحساب العنصر رقم n من متتابعة
+python/15,median,"Return median of elements in the list l.
+    >>> median([3, 1, 2, 4, 5])
+    3
+    >>> median([-10, 4, 6, 1000, 10, 20])
+    15.0",إرجاع الوسيط لعناصر القائمة l.,,,رجّع الوسيط (median) لعناصر الليستة l.,Claude draft; reviewed by the author (native Iraqi speaker),light,yes,
+python/16,is_palindrome,"Checks if given string is a palindrome
+    >>> is_palindrome('')
+    True
+    >>> is_palindrome('aba')
+    True
+    >>> is_palindrome('aaaaa')
+    True
+    >>> is_palindrome('zbcd')
+    False",يتحقق مما إذا كانت السلسلة المعطاة هي باليندروم.,,,تشوف إذا السترنك palindrome، يعني ينقرا من الجهتين نفس الشي.,Claude draft; reviewed by the author (native Iraqi speaker),light,yes,literal_warning checked: English literals are in the examples; no change
+python/17,remove_vowels,"remove_vowels is a function that takes string and returns string without vowels.
+    >>> remove_vowels('')
+    ''
+    >>> remove_vowels(""abcdef\nghijklm"")
+    'bcdf\nghjklm'
+    >>> remove_vowels('abcdef')
+    'bcdf'
+    >>> remove_vowels('aaaaa')
+    ''
+    >>> remove_vowels('aaBAA')
+    'B'
+    >>> remove_vowels('zbcd')
+    'zbcd'",remove_vowels هي وظيفة تأخذ سلسلة نصية وتعيد سلسلة نصية بدون حروف العلة.,,,remove_vowels فنكشن تاخذ سترنك وترجّعه بدون حروف العلة.,Claude draft; reviewed by the author (native Iraqi speaker),light,yes,literal_warning checked: English literals are in the examples; no change
+python/18,below_threshold,"Return True if all numbers in the list l are below threshold t.
+    >>> below_threshold([1, 2, 4, 10], 100)
+    True
+    >>> below_threshold([1, 20, 4, 10], 5)
+    False","""ارجع صحيح إذا كانت جميع الأرقام في القائمة l أقل من الحد t.""",,,رجّع True إذا كل الأرقام اللي بالليستة l أصغر من الحد t.,Claude draft; reviewed by the author (native Iraqi speaker),light,yes,
+python/19,add,"Add two numbers x and y
+    >>> add(2, 3)
+    5
+    >>> add(5, 7)
+    12",إضافة رقمين x و y,,,اجمع الرقمين x و y.,Claude draft; reviewed by the author (native Iraqi speaker),light,yes,
+python/20,same_chars,"Check if two words have the same characters.
+    >>> same_chars('eabcdzzzz', 'dddzzzzzzzddeddabc')
+    True
+    >>> same_chars('abcd', 'dddddddabc')
+    True
+    >>> same_chars('dddddddabc', 'abcd')
+    True
+    >>> same_chars('eabcd', 'dddddddabc')
+    False
+    >>> same_chars('abcd', 'dddddddabce')
+    False
+    >>> same_chars('eabcdzzzz', 'dddzzzzzzzddddabc')
+    False",تحقق مما إذا كانت كلمتان لديهما نفس الأحرف.,,,شوف إذا الكلمتين بيهم نفس الحروف.,Claude draft; reviewed by the author (native Iraqi speaker),light,yes,literal_warning checked: English literals are in the examples; no change
+python/21,fib,"Return n-th Fibonacci number.
+    >>> fib(10)
+    55
+    >>> fib(1)
+    1
+    >>> fib(8)
+    21",إرجاع العدد الفيبوناتشي رقم n.,,,رجّع رقم فيبوناتشي اللي ترتيبه n.,Claude draft; reviewed by the author (native Iraqi speaker),light,yes,
+python/22,common,"Return sorted unique common elements for two lists.
+    >>> common([1, 4, 3, 34, 653, 2, 5], [5, 7, 1, 5, 9, 653, 121])
+    [1, 5, 653]
+    >>> common([5, 3, 2, 8], [3, 2])
+    [2, 3]",إرجاع العناصر المشتركة الفريدة المرتبة لاثنين من القوائم.,,,رجّع العناصر المشتركة بين ليستتين، بدون تكرار ومرتبة.,Claude draft; reviewed by the author (native Iraqi speaker),light,yes,
+python/23,largest_prime_factor,"Return the largest prime factor of n. Assume n > 1 and is not a prime.
+    >>> largest_prime_factor(13195)
+    29
+    >>> largest_prime_factor(2048)
+    2","""ارجع أكبر عامل أولي لـ n. افترض أن n> 1 وليس عددًا أوليًا.""",,,رجّع أكبر عامل أولي للرقم n. اعتبر إن n أكبر من 1 وهو مو عدد أولي.,Claude draft; reviewed by the author (native Iraqi speaker),light,yes,
+python/24,sum_to_n,"sum_to_n is a function that sums numbers from 1 to n.
+    >>> sum_to_n(30)
+    465
+    >>> sum_to_n(100)
+    5050
+    >>> sum_to_n(5)
+    15
+    >>> sum_to_n(10)
+    55
+    >>> sum_to_n(1)
+    1",sum_to_n هي وظيفة تجمع الأرقام من 1 إلى n.,,,sum_to_n فنكشن تجمع الأرقام من 1 لحد n.,Claude draft; reviewed by the author (native Iraqi speaker),light,yes,
+python/25,derivative,"xs represent coefficients of a polynomial.
+    xs[0] + xs[1] * x + xs[2] * x^2 + ....
+     Return derivative of this polynomial in the same form.
+    >>> derivative([3, 1, 2, 4, 5])
+    [1, 4, 12, 20]
+    >>> derivative([1, 2, 3])
+    [2, 6]","xs تمثل معاملات متعددة الحدود.
+xs[0] + xs[1] * x + xs[2] * x^2 + ....
+إرجاع المشتقة لهذه المعادلة متعددة الحدود بنفس الصيغة.",,,"الـ xs هي معاملات متعددة حدود.
+xs[0] + xs[1] * x + xs[2] * x^2 + ....
+رجّع المشتقة مالتها بنفس الشكل.",Claude draft; reviewed by the author (native Iraqi speaker),medium,yes,
+python/26,fibfib,"The FibFib number sequence is a sequence similar to the Fibbonacci sequnece that's defined as follows:
+    fibfib(0) == 0
+    fibfib(1) == 0
+    fibfib(2) == 1
+    fibfib(n) == fibfib(n-1) + fibfib(n-2) + fibfib(n-3).
+    Please write a function to efficiently compute the n-th element of the fibfib number sequence.
+    >>> fibfib(1)
+    0
+    >>> fibfib(5)
+    4
+    >>> fibfib(8)
+    24","تتبع سلسلة أرقام فيبفيب هي سلسلة مشابهة لسلسلة فيبوناتشي التي تعرف على النحو التالي:
+    فيبفيب(0) == 0
+    فيبفيب(1) == 0
+    فيبفيب(2) == 1
+    فيبفيب(n) == فيبفيب(n-1) + فيبفيب(n-2) + فيبفيب(n-3).
+    يرجى كتابة وظيفة لحساب العنصر رقم n بكفاءة في سلسلة أرقام فيبفيب.",,,"متسلسلة FibFib تشبه فيبوناتشي، وتنعرف هيج:
+    fibfib(0) == 0
+    fibfib(1) == 0
+    fibfib(2) == 1
+    fibfib(n) == fibfib(n-1) + fibfib(n-2) + fibfib(n-3).
+    اكتب فنكشن تحسب العنصر رقم n من متسلسلة fibfib، وتكون سريعة.",Claude draft; reviewed by the author (native Iraqi speaker),medium,yes,MSA corrected: العنصر الثالث عشر بكفاءة في سلسلة أرقام فيبفيب -> العنصر رقم n بكفاءة في سلسلة أرقام فيبفيب
+python/27,vowels_count,"Write a function vowels_count which takes a string representing
+    a word as input and returns the number of vowels in the string.
+    Vowels in this case are 'a', 'e', 'i', 'o', 'u'. Here, 'y' is also a
+    vowel, but only when it is at the end of the given word.
+
+    Example:
+    >>> vowels_count(""abcde"")
+    2
+    >>> vowels_count(""ACEDY"")
+    3","اكتب دالة تسمى vowels_count تأخذ سلسلة نصية تمثل كلمة كإدخال وتعيد عدد الحروف الصوتية في السلسلة. الحروف الصوتية في هذه الحالة هي 'a'، 'e'، 'i'، 'o'، 'u'. هنا، 'y' هو أيضًا حرف صوتي، ولكن فقط عندما يكون في نهاية الكلمة المعطاة.
+
+    مثال:",,,"سوّي فنكشن اسمها vowels_count، تاخذ سترنك بيه كلمة وترجّع شكد بيه حروف علة. حروف العلة هنا هي 'a' و 'e' و 'i' و 'o' و 'u'. وحرف 'y' هم يُحسب حرف علة، بس إذا جا بآخر الكلمة.
+
+    مثال:",Claude draft; reviewed by the author (native Iraqi speaker),medium,yes,literal_warning checked: English literals are in the examples; no change
+python/28,search,"You are given a non-empty list of positive integers. Return the greatest integer that is greater than 
+    zero, and has a frequency greater than or equal to the value of the integer itself. 
+    The frequency of an integer is the number of times it appears in the list.
+    If no such a value exist, return -1.
+    Examples:
+        search([4, 1, 2, 2, 3, 1]) == 2
+        search([1, 2, 2, 3, 3, 3, 4, 4, 4]) == 3
+        search([5, 5, 4, 4, 4]) == -1",يتم تزويدك بقائمة غير فارغة من الأعداد الصحيحة الإيجابية. يجب إرجاع أكبر عدد صحيح يكون أكبر من الصفر وله تكرار أكبر من أو يساوي قيمة العدد الصحيح نفسه. تكرار العدد الصحيح هو عدد مرات ظهوره في القائمة. إذا لم يكن هناك قيمة كهذه ، فأرجع -1. أمثلة:,,,ينطوك ليستة مو فارغة بيها أرقام صحيحة موجبة. رجّع أكبر رقم يكون أكبر من صفر، وعدد مرات تكراره بالليستة أكبر من أو يساوي قيمته هو. التكرار يعني شكد مرة يطلع الرقم بالليستة. إذا ماكو هيج رقم، رجّع -1. أمثلة:,Claude draft; reviewed by the author (native Iraqi speaker),heavy,yes,
+python/29,triangle_area,"Given the lengths of the three sides of a triangle. Return the area of
+    the triangle rounded to 2 decimal points if the three sides form a valid triangle. 
+    Otherwise return -1
+    Three sides make a valid triangle when the sum of any two sides is greater 
+    than the third side.
+    Example:
+    triangle_area(3, 4, 5) == 6.00
+    triangle_area(1, 2, 10) == -1",بالنظر إلى أطوال الأضلاع الثلاثة لمثلث. يرجى إرجاع مساحة المثلث مستديرة إلى 2 نقطة عشرية إذا كانت الأضلاع الثلاثة تشكل مثلثًا صالحًا. وإلا، يرجى إرجاع -1. تشكل الأضلاع الثلاثة مثلثًا صالحًا عندما يكون مجموع أي ضلعين أكبر من الضلع الثالث. مثال:,,,ينطوك أطوال الأضلاع الثلاثة لمثلث. رجّع مساحة المثلث مقرّبة لمرتبتين عشريتين إذا الأضلاع تسوي مثلث صحيح. وإذا لا، رجّع -1. الأضلاع تسوي مثلث صحيح إذا مجموع أي ضلعين أكبر من الضلع الثالث. مثال:,Claude draft; reviewed by the author (native Iraqi speaker),heavy,yes,
+python/30,will_it_fly,"Write a function that returns True if the object q will fly, and False otherwise.
+    The object q will fly if it's balanced (it is a palindromic list) and the sum of its elements is less than or equal the maximum possible weight w.
+
+    Example:
+    will_it_fly([1, 2], 5) ➞ False 
+    # 1+2 is less than the maximum possible weight, but it's unbalanced.
+
+    will_it_fly([3, 2, 3], 1) ➞ False
+    # it's balanced, but 3+2+3 is more than the maximum possible weight.
+
+    will_it_fly([3, 2, 3], 9) ➞ True
+    # 3+2+3 is less than the maximum possible weight, and it's balanced.
+
+    will_it_fly([3], 5) ➞ True
+    # 3 is less than the maximum possible weight, and it's balanced.","اكتب دالة تعيد القيمة صحيحة إذا كان الكائن q سيطير، وخطأ في حالة عدم ذلك.
+سيطير الكائن q إذا كان متوازنًا (هو قائمة متناظرة) ومجموع عناصره أقل من أو يساوي الحد الأقصى الممكن للوزن w.
+
+    مثال:
+will_it_fly([1، 2]، 5) ➞ False
+# 1 + 2 أقل من الحد الأقصى الممكن للوزن ، لكنه غير متوازن.
+
+    will_it_fly([3، 2، 3]، 1) ➞ False
+# إنه متوازن ، لكن 3 + 2 + 3 أكثر من الحد الأقصى الممكن للوزن.
+
+    will_it_fly([3، 2، 3]، 9) ➞ True
+# 3 + 2 + 3 أقل من الحد الأقصى الممكن للوزن ، وهو متوازن.
+
+    will_it_fly([3]، 5) ➞ True
+# 3 أقل من الحد الأقصى الممكن للوزن ، وهو متوازن.",,,"اكتب فنكشن ترجّع True إذا الشي q راح يطير، وإذا لا ترجّع False.
+الـ q يطير إذا چان متوازن (يعني ليستة palindrome) ومجموع عناصره أصغر من أو يساوي أقصى وزن w.
+
+    مثال:
+will_it_fly([1, 2], 5) ➞ False
+# 1+2 أصغر من أقصى وزن، بس مو متوازن.
+
+    will_it_fly([3, 2, 3], 1) ➞ False
+# متوازن، بس 3+2+3 أكثر من أقصى وزن.
+
+    will_it_fly([3, 2, 3], 9) ➞ True
+# 3+2+3 أصغر من أقصى وزن، ومتوازن.
+
+    will_it_fly([3], 5) ➞ True
+# 3 أصغر من أقصى وزن، ومتوازن.",Claude draft; reviewed by the author (native Iraqi speaker),heavy,yes,MSA corrected: ➞ خطأ -> ➞ False; ➞ صحيح -> ➞ True
+python/31,is_multiply_prime,"Write a function that returns true if the given number is the multiplication of 3 prime numbers
+    and false otherwise.
+    Knowing that (a) is less then 100. 
+    Example:
+    is_multiply_prime(30) == True
+    30 = 2 * 3 * 5","اكتب دالة تعيد القيمة الصحيحة إذا كان الرقم المعطى هو ضرب 3 أعداد أولية، وإلا فهي تعيد القيمة الخاطئة. علمًا بأن (أ) أقل من 100. 
+
+    مثال:",,,"اكتب فنكشن ترجّع True إذا الرقم اللي ينطوك هو حاصل ضرب 3 أعداد أولية، وإذا لا ترجّع False. وخلي ببالك إن (a) أصغر من 100.
+
+    مثال:",Claude draft; reviewed by the author (native Iraqi speaker),heavy,yes,
+python/32,decimal_to_binary,"You will be given a number in decimal form and your task is to convert it to
+    binary format. The function should return a string, with each character representing a binary
+    number. Each character in the string will be '0' or '1'.
+
+    There will be an extra couple of characters 'db' at the beginning and at the end of the string.
+    The extra characters are there to help with the format.
+
+    Examples:
+    decimal_to_binary(15)   # returns ""db1111db""
+    decimal_to_binary(32)   # returns ""db100000db""","سيتم إعطاؤك رقمًا بالشكل العشري ومهمتك هي تحويله إلى الشكل الثنائي. يجب أن تعيد الدالة سلسلة نصية، حيث يمثل كل حرف رقمًا ثنائيًا. سيكون كل حرف في السلسلة هو '0' أو '1'.
+
+    سيكون هناك حرفان إضافيان 'db' في بداية ونهاية السلسلة. الحروف الإضافية موجودة للمساعدة في التنسيق.
+
+    أمثلة:",,,"راح ينطوك رقم بالنظام العشري، وشغلك تحوّله لـ binary. الفنكشن ترجّع سترنك، كل حرف بيه يمثل خانة binary، يعني كل حرف يا '0' يا '1'.
+
+    وراح يكون اكو حرفين زايدين 'db' ببداية السترنك وبآخره. هذني الحرفين موجودين بس حتى يساعدون بالتنسيق.
+
+    أمثلة:",Claude draft; reviewed by the author (native Iraqi speaker),heavy,yes,
+python/33,is_happy,"You are given a string s.
+    Your task is to check if the string is happy or not.
+    A string is happy if its length is at least 3 and every 3 consecutive letters are distinct
+    For example:
+    is_happy(a) => False
+    is_happy(aa) => False
+    is_happy(abcd) => True
+    is_happy(aabb) => False
+    is_happy(adb) => True
+    is_happy(xyy) => False","يتم إعطاؤك سلسلة s.
+مهمتك هي التحقق مما إذا كانت السلسلة سعيدة أم لا.
+تعتبر السلسلة سعيدة إذا كان طولها على الأقل 3 وكانت كل 3 أحرف متتالية مختلفة.
+على سبيل المثال:",,,"ينطوك سترنك s.
+شغلك تشوف السترنك ""فرحان"" لو لا.
+السترنك يكون فرحان إذا طوله 3 أو أكثر، وكل 3 حروف ورا بعض ما بيهن تكرار.
+مثلاً:",Claude draft; reviewed by the author (native Iraqi speaker),heavy,yes,
+python/34,numerical_letter_grade,"It is the last week of the semester and the teacher has to give the grades
+    to students. The teacher has been making her own algorithm for grading.
+    The only problem is, she has lost the code she used for grading.
+    She has given you a list of GPAs for some students and you have to write 
+    a function that can output a list of letter grades using the following table:
+             GPA       |    Letter grade
+              4.0                A+
+            > 3.7                A 
+            > 3.3                A- 
+            > 3.0                B+
+            > 2.7                B 
+            > 2.3                B-
+            > 2.0                C+
+            > 1.7                C
+            > 1.3                C-
+            > 1.0                D+ 
+            > 0.7                D 
+            > 0.0                D-
+              0.0                E
+    
+
+    Example:
+    grade_equation([4.0, 3, 1.7, 2, 3.5]) ==> ['A+', 'B', 'C-', 'C', 'A-']","هذا هو الأسبوع الأخير من الفصل الدراسي ويجب على المعلم إعطاء الدرجات للطلاب. كان المعلم يقوم بإنشاء خوارزمية خاصة به لتقييم الدرجات. المشكلة الوحيدة هي أنها فقدت الكود الذي استخدمته للتقييم. لقد قدمت لك قائمة بمعدلات النجاح لبعض الطلاب ويجب عليك كتابة وظيفة يمكنها إخراج قائمة بالدرجات الحرفية باستخدام الجدول التالي:
+             GPA       |    Letter grade
+              4.0                A+
+            > 3.7                A 
+            > 3.3                A- 
+            > 3.0                B+
+            > 2.7                B 
+            > 2.3                B-
+            > 2.0                C+
+            > 1.7                C
+            > 1.3                C-
+            > 1.0                D+ 
+            > 0.7                D 
+            > 0.0                D-
+              0.0                E
+    
+
+        مثال:",,,"هذا آخر أسبوع بالكورس، والست لازم تنطي الدرجات للطلاب. الست چانت مسوية خوارزمية خاصة بيها للتقييم، بس المشكلة ضيّعت الكود اللي چانت تستعمله. انطتك ليستة بيها معدلات (GPA) لكم طالب، ولازم تكتب فنكشن تطلّع ليستة بالدرجات الحرفية حسب هذا الجدول:
+             GPA       |    Letter grade
+              4.0                A+
+            > 3.7                A 
+            > 3.3                A- 
+            > 3.0                B+
+            > 2.7                B 
+            > 2.3                B-
+            > 2.0                C+
+            > 1.7                C
+            > 1.3                C-
+            > 1.0                D+ 
+            > 0.7                D 
+            > 0.0                D-
+              0.0                E
+    
+
+        مثال:",Claude draft; reviewed by the author (native Iraqi speaker),heavy,yes,
+python/35,prime_length,"Write a function that takes a string and returns True if the string
+    length is a prime number or False otherwise
+    Examples
+    prime_length('Hello') == True
+    prime_length('abcdcba') == True
+    prime_length('kittens') == True
+    prime_length('orange') == False","اكتب دالة تأخذ سلسلة نصية وتعيد True إذا كان طول السلسلة عددًا أوليًا أو False في حالة عكس ذلك
+    أمثلة",,,"اكتب فنكشن تاخذ سترنك وترجّع True إذا طول السترنك عدد أولي، وإذا لا ترجّع False
+    أمثلة",Claude draft; reviewed by the author (native Iraqi speaker),light,yes,literal_warning checked: English literals are in the examples; no change
+python/36,solve,"Given a positive integer N, return the total sum of its digits in binary.
+    
+    Example
+        For N = 1000, the sum of digits will be 1 the output should be ""1"".
+        For N = 150, the sum of digits will be 6 the output should be ""110"".
+        For N = 147, the sum of digits will be 12 the output should be ""1100"".
+    
+    Variables:
+        @N integer
+             Constraints: 0 ≤ N ≤ 10000.
+    Output:
+         a string of binary number","بالنظر إلى عدد صحيح موجب N، يتم إرجاع إجمالي مجموع أرقامه في النظام الثنائي.
+
+    مثال:
+    بالنسبة لـ N = 1000، سيكون مجموع الأرقام 1 ويجب أن يكون الإخراج ""1"".
+    بالنسبة لـ N = 150، سيكون مجموع الأرقام 6 ويجب أن يكون الإخراج ""110"".
+    بالنسبة لـ N = 147، سيكون مجموع الأرقام 12 ويجب أن يكون الإخراج ""1100"".
+
+    المتغيرات:
+    @N عدد صحيح
+         القيود: 0 ≤ N ≤ 10000.
+الإخراج:
+     سلسلة من الأرقام الثنائية.",,,"ينطوك رقم صحيح موجب N، رجّع مجموع خاناته، بس مكتوب بالـ binary.
+
+    مثال:
+    إذا N = 1000، مجموع الخانات 1 والناتج لازم يكون ""1"".
+    إذا N = 150، مجموع الخانات 6 والناتج لازم يكون ""110"".
+    إذا N = 147، مجموع الخانات 12 والناتج لازم يكون ""1100"".
+
+    المتغيرات:
+    @N رقم صحيح
+         الشروط: 0 ≤ N ≤ 10000.
+الناتج:
+     سترنك بيه رقم binary.",Claude draft; reviewed by the author (native Iraqi speaker),heavy,yes,
+python/37,get_row,"You are given a 2 dimensional data, as a nested lists,
+    which is similar to matrix, however, unlike matrices,
+    each row may contain a different number of columns.
+    Given lst, and integer x, find integers x in the list,
+    and return list of tuples, [(x1, y1), (x2, y2) ...] such that
+    each tuple is a coordinate - (row, columns), starting with 0.
+    Sort coordinates initially by rows in ascending order.
+    Also, sort coordinates of the row by columns in descending order.
+    
+    Examples:
+    get_row([
+      [1,2,3,4,5,6],
+      [1,2,3,4,1,6],
+      [1,2,3,4,5,1]
+    ], 1) == [(0, 0), (1, 4), (1, 0), (2, 5), (2, 0)]
+    get_row([], 1) == []
+    get_row([[], [1], [1, 2, 3]], 3) == [(2, 2)]","يتم تزويدك ببيانات ثنائية الأبعاد، على شكل قوائم متداخلة،
+    والتي تشبه المصفوفة، ولكن على عكس المصفوفات،
+    قد تحتوي كل صف على عدد مختلف من الأعمدة.
+    بالنظر إلى lst و x عدد صحيح، ابحث عن الأعداد الصحيحة x في القائمة،
+    وأرجع قائمة من الأزواج، [(x1، y1)، (x2، y2) ...] بحيث
+    يكون كل زوج إحداثيات - (صف، أعمدة)، بدءًا من 0.
+    فرز الإحداثيات في البداية حسب الصفوف بترتيب تصاعدي.
+    أيضًا، فرز إحداثيات الصف حسب الأعمدة بترتيب تنازلي.
+    
+    أمثلة:",,,"ينطوك بيانات ثنائية الأبعاد، يعني ليستات جوّه ليستات،
+    تشبه الماتركس بس مو مثلها بالضبط، لأن كل صف ممكن يكون بيه عدد أعمدة غير الثاني.
+    عندك lst ورقم صحيح x، دوّر على x بالليستة،
+    ورجّع ليستة tuples، [(x1, y1), (x2, y2) ...] بحيث
+    كل tuple هو إحداثي (صف، عمود)، والعد يبدي من 0.
+    رتّب الإحداثيات أول شي حسب الصف تصاعدي.
+    وجوّه نفس الصف، رتّبها حسب العمود تنازلي.
+
+    أمثلة:",Claude draft; reviewed by the author (native Iraqi speaker),medium,yes,
+python/38,next_smallest,"You are given a list of integers.
+    Write a function next_smallest() that returns the 2nd smallest element of the list.
+    Return null if there is no such element.
+    
+    next_smallest([1, 2, 3, 4, 5]) == 2
+    next_smallest([5, 1, 4, 3, 2]) == 2
+    next_smallest([]) == None
+    next_smallest([1, 1]) == None","تمنحك قائمة من الأعداد الصحيحة.
+اكتب دالة next_smallest() التي تعيد العنصر الثاني الأصغر في القائمة.
+إرجاع None إذا لم يكن هناك عنصر من هذا النوع.",,,"ينطوك ليستة أرقام صحيحة.
+اكتب فنكشن next_smallest() ترجّع ثاني أصغر عنصر بالليستة.
+وإذا ماكو هيج عنصر رجّع None.",Claude draft; reviewed by the author (native Iraqi speaker),medium,yes,MSA corrected: إرجاع قيمة فارغة إذا -> إرجاع None إذا
+python/39,is_bored,"You'll be given a string of words, and your task is to count the number
+    of boredoms. A boredom is a sentence that starts with the word ""I"".
+    Sentences are delimited by '.', '?' or '!'.
+   
+    For example:
+    >>> is_bored(""Hello world"")
+    0
+    >>> is_bored(""The sky is blue. The sun is shining. I love this weather"")
+    1","سيتم تزويدك بسلسلة من الكلمات، ومهمتك هي عدد الملل. الملل هو جملة تبدأ بكلمة ""I"". تتم فصل الجمل بواسطة '.' أو '?' أو '!'.
+
+    على سبيل المثال:",,,"راح ينطوك سترنك بيه كلمات، وشغلك تحسب شكد اكو ""ملل"". الملل هو جملة تبدي بكلمة ""I"". الجمل تنفصل بـ '.' أو '?' أو '!'.
+
+    مثلاً:",Claude draft; reviewed by the author (native Iraqi speaker),medium,yes,"MSA corrected: تبدأ بكلمة ""أنا"" -> تبدأ بكلمة ""I"""
+python/40,skjkasdkd,"You are given a list of integers.
+    You need to find the largest prime value and return the sum of its digits.
+
+    Examples:
+    For lst = [0,3,2,1,3,5,7,4,5,5,5,2,181,32,4,32,3,2,32,324,4,3] the output should be 10
+    For lst = [1,0,1,8,2,4597,2,1,3,40,1,2,1,2,4,2,5,1] the output should be 25
+    For lst = [1,3,1,32,5107,34,83278,109,163,23,2323,32,30,1,9,3] the output should be 13
+    For lst = [0,724,32,71,99,32,6,0,5,91,83,0,5,6] the output should be 11
+    For lst = [0,81,12,3,1,21] the output should be 3
+    For lst = [0,8,1,2,1,7] the output should be 7","تمنحك قائمة من الأعداد الصحيحة.
+    تحتاج إلى العثور على أكبر قيمة أولية وإرجاع مجموع أرقامها.
+
+        أمثلة:",,,"ينطوك ليستة أرقام صحيحة.
+    لازم تلكى أكبر عدد أولي بيها، وترجّع مجموع خاناته.
+
+        أمثلة:",Claude draft; reviewed by the author (native Iraqi speaker),heavy,yes,
+python/41,check_dict_case,"Given a dictionary, return True if all keys are strings in lower 
+    case or all keys are strings in upper case, else return False.
+    The function should return False is the given dictionary is empty.
+    Examples:
+    check_dict_case({""a"":""apple"", ""b"":""banana""}) should return True.
+    check_dict_case({""a"":""apple"", ""A"":""banana"", ""B"":""banana""}) should return False.
+    check_dict_case({""a"":""apple"", 8:""banana"", ""a"":""apple""}) should return False.
+    check_dict_case({""Name"":""John"", ""Age"":""36"", ""City"":""Houston""}) should return False.
+    check_dict_case({""STATE"":""NC"", ""ZIP"":""12345"" }) should return True.",بالنظر إلى قاموس، إرجاع قيمة True إذا كانت جميع المفاتيح هي سلاسل نصية في الحالة الصغيرة أو جميع المفاتيح هي سلاسل نصية في الحالة الكبيرة، وإلا فإنه يجب إرجاع False. يجب أن يعيد الدالة False إذا كان القاموس المعطى فارغًا. أمثلة:,,,ينطوك dictionary، رجّع True إذا كل المفاتيح سترنكات وكلها حروف صغيرة، أو كلها حروف كبيرة. غير هيج رجّع False. وإذا الـ dictionary فارغ هم رجّع False. أمثلة:,Claude draft; reviewed by the author (native Iraqi speaker),medium,yes,literal_warning checked: English literals are in the examples; no change
+python/42,closest_integer,"Create a function that takes a value (string) representing a number
+    and returns the closest integer to it. If the number is equidistant
+    from two integers, round it away from zero.
+
+    Examples
+    >>> closest_integer(""10"")
+    10
+    >>> closest_integer(""15.3"")
+    15
+
+    Note:
+    Rounding away from zero means that if the given number is equidistant
+    from two integers, the one you should return is the one that is the
+    farthest from zero. For example closest_integer(""14.5"") should
+    return 15 and closest_integer(""-14.5"") should return -15.","أنشئ دالة تأخذ قيمة (سلسلة نصية) تمثل رقمًا وتعيد أقرب عدد صحيح إليه. إذا كان الرقم على بعد مسافة متساوية من عددين صحيحين ، فقم بتقريبه بعيدًا عن الصفر.
+
+        أمثلة",,,"سوّي فنكشن تاخذ قيمة (سترنك) بيها رقم، وترجّع أقرب رقم صحيح إله. إذا الرقم بالنص بالضبط بين رقمين صحيحين، قرّبه للجهة البعيدة عن الصفر.
+
+        أمثلة",Claude draft; reviewed by the author (native Iraqi speaker),heavy,yes,
+python/43,make_a_pile,"Given a positive integer n, you have to make a pile of n levels of stones.
+    The first level has n stones.
+    The number of stones in the next level is:
+        - the next odd number if n is odd.
+        - the next even number if n is even.
+    Return the number of stones in each level in a list, where element at index
+    i represents the number of stones in the level (i+1).
+
+    Examples:
+    >>> make_a_pile(3)
+    [3, 5, 7]","بالنظر إلى عدد صحيح موجب n، يجب عليك إنشاء كومة من n مستويات من الحجارة.
+المستوى الأول يحتوي على n حجرًا.
+عدد الحجارة في المستوى التالي هو:
+- العدد الفردي التالي إذا كان n فرديًا.
+- العدد الزوجي التالي إذا كان n زوجيًا.
+يرجع عدد الحجارة في كل مستوى في قائمة، حيث يمثل العنصر في المؤشر i عدد الحجارة في المستوى (i + 1).
+
+    أمثلة:",,,"ينطوك رقم صحيح موجب n، ولازم تسوي كومة حجار بيها n طوابق.
+الطابق الأول بيه n حجارة.
+عدد الحجارة بالطابق اللي بعده يكون:
+- الرقم الفردي اللي بعده إذا n فردي.
+- الرقم الزوجي اللي بعده إذا n زوجي.
+رجّع عدد الحجارة بكل طابق بليستة، بحيث العنصر بالـ index i يكون عدد حجارة الطابق (i+1).
+
+    أمثلة:",Claude draft; reviewed by the author (native Iraqi speaker),heavy,yes,
+python/44,words_string,"You will be given a string of words separated by commas or spaces. Your task is
+    to split the string into words and return an array of the words.
+    
+    For example:
+    words_string(""Hi, my name is John"") == [""Hi"", ""my"", ""name"", ""is"", ""John""]
+    words_string(""One, two, three, four, five, six"") == [""One"", ""two"", ""three"", ""four"", ""five"", ""six""]","سيتم إعطاؤك سلسلة من الكلمات مفصولة بفواصل أو مسافات. مهمتك هي تقسيم السلسلة إلى كلمات وإرجاع مصفوفة من الكلمات.
+
+    على سبيل المثال:",,,"راح ينطوك سترنك بيه كلمات مفصولة بفوارز أو مسافات. شغلك تفصل الكلمات وترجّعها بـ array.
+
+    مثلاً:",Claude draft; reviewed by the author (native Iraqi speaker),light,yes,literal_warning checked: English literals are in the examples; no change
+python/45,choose_num,"This function takes two positive numbers x and y and returns the
+    biggest even integer number that is in the range [x, y] inclusive. If 
+    there's no such number, then the function should return -1.
+
+    For example:
+    choose_num(12, 15) = 14
+    choose_num(13, 12) = -1","هذه الدالة تأخذ رقمين موجبين x و y وتعيد أكبر عدد صحيح زوجي يقع في النطاق [x، y] بما في ذلك. إذا لم يكن هناك عدد كهذا ، يجب أن تعيد الدالة -1.
+
+    على سبيل المثال:",,,"هاي الفنكشن تاخذ رقمين موجبين x و y، وترجّع أكبر رقم زوجي صحيح يوكع بين x و y، ويدخل وياهم x و y نفسهم. إذا ماكو هيج رقم، الفنكشن ترجّع -1.
+
+    مثلاً:",Claude draft; reviewed by the author (native Iraqi speaker),heavy,yes,
+python/46,rounded_avg,"You are given two positive integers n and m, and your task is to compute the
+    average of the integers from n through m (including n and m). 
+    Round the answer to the nearest integer and convert that to binary.
+    If n is greater than m, return -1.
+    Example:
+    rounded_avg(1, 5) => ""0b11""
+    rounded_avg(7, 5) => -1
+    rounded_avg(10, 20) => ""0b1111""
+    rounded_avg(20, 33) => ""0b11010""",يتم إعطاؤك عددين صحيحين موجبين n و m ، ومهمتك هي حساب المتوسط ​​للأعداد الصحيحة من n إلى m (بما في ذلك n و m). قم بتقريب الإجابة إلى أقرب عدد صحيح وتحويلها إلى النظام الثنائي. إذا كان n أكبر من m ، فأرجع -1. مثال:,,,ينطوك رقمين صحيحين موجبين n و m، وشغلك تحسب معدل الأرقام الصحيحة من n لحد m (ويدخل وياهم n و m). قرّب الجواب لأقرب رقم صحيح وحوّله لـ binary. إذا n أكبر من m، رجّع -1. مثال:,Claude draft; reviewed by the author (native Iraqi speaker),medium,yes,
+python/47,f,"Implement the function f that takes n as a parameter,
+    and returns a list of size n, such that the value of the element at index i is the factorial of i if i is even
+    or the sum of numbers from 1 to i otherwise.
+    i starts from 1.
+    the factorial of i is the multiplication of the numbers from 1 to i (1 * 2 * ... * i).
+    Example:
+    f(5) == [1, 2, 6, 24, 15]","قم بتنفيذ الدالة f التي تأخذ n كمعلمة،
+وترجع قائمة بحجم n، بحيث يكون قيمة العنصر في المؤشر i هو عاملي الرقم i إذا كان i زوجيًا،
+أو مجموع الأرقام من 1 إلى i في حالة أخرى.
+i يبدأ من 1.
+عاملي الرقم i هو الضرب من الأرقام من 1 إلى i (1 * 2 * ... * i).
+مثال:",,,"سوّي الفنكشن f اللي تاخذ n،
+وترجّع ليستة طولها n، بحيث قيمة العنصر بالـ index i تكون factorial الرقم i إذا i زوجي،
+وإذا فردي تكون مجموع الأرقام من 1 لحد i.
+الـ i يبدي من 1.
+الـ factorial مال i هو حاصل ضرب الأرقام من 1 لحد i (1 * 2 * ... * i).
+مثال:",Claude draft; reviewed by the author (native Iraqi speaker),medium,yes,MSA corrected after pilot: هو عاملي الرقم i إذا كان i فرديًا -> هو عاملي الرقم i إذا كان i زوجيًا
+python/48,even_odd_palindrome,"Given a positive integer n, return a tuple that has the number of even and odd
+    integer palindromes that fall within the range(1, n), inclusive.
+
+    Example 1:
+
+        Input: 3
+        Output: (1, 2)
+        Explanation:
+        Integer palindrome are 1, 2, 3. one of them is even, and two of them are odd.
+
+    Example 2:
+
+        Input: 12
+        Output: (4, 6)
+        Explanation:
+        Integer palindrome are 1, 2, 3, 4, 5, 6, 7, 8, 9, 11. four of them are even, and 6 of them are odd.
+
+    Note:
+        1. 1 <= n <= 10^3
+        2. returned tuple has the number of even and odd integer palindromes respectively.","بالنظر إلى عدد صحيح موجب n ، يرجع tuple الذي يحتوي على عدد palindrome الصحيحة الزوجية والفردية التي تقع ضمن النطاق (1، n) ، شاملاً.
+
+    مثال 1:
+
+        الإدخال: 3
+    النتيجة: (1، 2)
+    الشرح:
+    عدد palindrome الصحيحة هي 1 و 2 و 3. واحد منهم زوجي ، واثنان منهم فرديان.
+
+    مثال 2:
+
+        الإدخال: 12
+    النتيجة: (4، 6)
+    الشرح:
+    عدد palindrome الصحيحة هي 1 و 2 و 3 و 4 و 5 و 6 و 7 و 8 و 9 و 11. أربعة منهم زوجيون ، و 6 منهم فرديون.
+
+    ملاحظة:
+    1. 1 <= n <= 10^3
+    2. tuple المرجع يحتوي على عدد palindrome الصحيحة الزوجية والفردية على التوالي.",,,"ينطوك رقم صحيح موجب n، رجّع tuple بيه عدد الأرقام الـ palindrome الزوجية والفردية اللي بين 1 و n، ويدخل وياهم n.
+
+    مثال 1:
+
+        المدخل: 3
+    الناتج: (1, 2)
+    الشرح:
+    الأرقام الـ palindrome هي 1 و 2 و 3. وحدة منهم زوجية، وثنتين فردية.
+
+    مثال 2:
+
+        المدخل: 12
+    الناتج: (4, 6)
+    الشرح:
+    الأرقام الـ palindrome هي 1، 2، 3، 4، 5، 6، 7، 8، 9، 11. أربعة منهم زوجية، و6 فردية.
+
+    ملاحظة:
+    1. 1 <= n <= 10^3
+    2. الـ tuple اللي ترجّعه بيه عدد الزوجية وبعدين عدد الفردية.",Claude draft; reviewed by the author (native Iraqi speaker),medium,yes,
+python/49,move_one_ball,"We have an array 'arr' of N integers arr[1], arr[2], ..., arr[N].The
+    numbers in the array will be randomly ordered. Your task is to determine if
+    it is possible to get an array sorted in non-decreasing order by performing 
+    the following operation on the given array:
+        You are allowed to perform right shift operation any number of times.
+    
+    One right shift operation means shifting all elements of the array by one
+    position in the right direction. The last element of the array will be moved to
+    the starting position in the array i.e. 0th index. 
+
+    If it is possible to obtain the sorted array by performing the above operation
+    then return True else return False.
+    If the given array is empty then return True.
+
+    Note: The given list is guaranteed to have unique elements.
+
+    For Example:
+    
+    move_one_ball([3, 4, 5, 1, 2])==>True
+    Explanation: By performin 2 right shift operations, non-decreasing order can
+                 be achieved for the given array.
+    move_one_ball([3, 5, 4, 1, 2])==>False
+    Explanation:It is not possible to get non-decreasing order for the given
+                array by performing any number of right shift operations.","لدينا مصفوفة 'arr' من N أعداد صحيحة arr [1]، arr [2]، ...، arr [N]. سيتم ترتيب الأرقام في المصفوفة بشكل عشوائي. مهمتك هي تحديد ما إذا كان من الممكن الحصول على مصفوفة مرتبة بترتيب غير تنازلي عن طريق تنفيذ العملية التالية على المصفوفة المعطاة:
+    يسمح لك بتنفيذ عملية التحويل اليميني أي عدد من المرات.
+
+        تعني عملية التحويل اليميني الواحد تحويل جميع عناصر المصفوفة بمقدار واحد في الاتجاه الصحيح. سيتم نقل العنصر الأخير في المصفوفة إلى الموضع البدء في المصفوفة أي الفهرس 0.
+
+        إذا كان من الممكن الحصول على المصفوفة المرتبة بتنفيذ العملية أعلاه ، فأرجع True وإلا فأرجع False. إذا كانت المصفوفة المعطاة فارغة ، فأرجع True.
+
+        ملاحظة: يتم ضمان وجود عناصر فريدة في القائمة المعطاة.
+
+        على سبيل المثال:
+
+        move_one_ball ([3، 4، 5، 1، 2]) ==> True
+    تفسير: يمكن تحقيق الترتيب غير التنازلي للمصفوفة المعطاة بتنفيذ 2 عمليات تحويل يمينية.
+    move_one_ball ([3، 5، 4، 1، 2]) ==> False
+    تفسير: لا يمكن الحصول على ترتيب غير تنازلي للمصفوفة المعطاة بتنفيذ أي عدد من عمليات التحويل اليميني.",,,"عدنا array اسمها 'arr' بيها N أرقام صحيحة arr[1], arr[2], ..., arr[N]. الأرقام مخربطة بترتيب عشوائي. شغلك تشوف إذا ممكن نطلّع array مرتبة ترتيب غير تنازلي، إذا سوّينا هالعملية على الـ array:
+    يصير تسوي right shift كم مرة ما تريد.
+
+        الـ right shift الواحد يعني كل العناصر تتزحلك مكان واحد لليمين، والعنصر الأخير ينتقل لأول الـ array يعني للـ index 0.
+
+        إذا ممكن نوصل لـ array مرتبة بهالعملية رجّع True، وإذا لا رجّع False. وإذا الـ array فارغة رجّع True.
+
+        ملاحظة: الليستة مضمون ما بيها أرقام مكررة.
+
+        مثلاً:
+
+        move_one_ball([3, 4, 5, 1, 2]) ==> True
+    الشرح: بـ 2 right shift تصير الـ array مرتبة.
+    move_one_ball([3, 5, 4, 1, 2]) ==> False
+    الشرح: شكد ما تسوي right shift ما تصير مرتبة.",Claude draft; reviewed by the author (native Iraqi speaker),medium,yes,
+python/50,exchange,"In this problem, you will implement a function that takes two lists of numbers,
+    and determines whether it is possible to perform an exchange of elements
+    between them to make lst1 a list of only even numbers.
+    There is no limit on the number of exchanged elements between lst1 and lst2.
+    If it is possible to exchange elements between the lst1 and lst2 to make
+    all the elements of lst1 to be even, return ""YES"".
+    Otherwise, return ""NO"".
+    For example:
+    exchange([1, 2, 3, 4], [1, 2, 3, 4]) => ""YES""
+    exchange([1, 2, 3, 4], [1, 5, 3, 4]) => ""NO""
+    It is assumed that the input lists will be non-empty.","في هذه المشكلة، ستقوم بتنفيذ وظيفة تأخذ قائمتين من الأرقام، وتحدد ما إذا كان من الممكن القيام بتبادل العناصر بينهما لجعل lst1 قائمة من الأرقام الزوجية فقط. لا يوجد حد لعدد العناصر المتبادلة بين lst1 و lst2. إذا كان من الممكن تبادل العناصر بين lst1 و lst2 لجعل جميع عناصر lst1 زوجية، فأرجع ""YES"". وإلا، أرجع ""NO"". على سبيل المثال: exchange([1، 2، 3، 4]، [1، 2، 3، 4]) => ""YES"" exchange([1، 2، 3، 4]، [1، 5، 3، 4]) => ""NO"" يفترض أن تكون القوائم المدخلة غير فارغة.",,,"بهالسؤال راح تسوي فنكشن تاخذ ليستتين أرقام، وتشوف إذا ممكن نبادل عناصر بيناتهم حتى lst1 تصير كلها أرقام زوجية. ماكو حد لعدد العناصر اللي نبادلها بين lst1 و lst2. إذا يصير نبادل ونخلي كل عناصر lst1 زوجية، رجّع ""YES"". وإذا ما يصير، رجّع ""NO"". مثلاً: exchange([1, 2, 3, 4], [1, 2, 3, 4]) => ""YES"" exchange([1, 2, 3, 4], [1, 5, 3, 4]) => ""NO"" واعتبر إن الليستات اللي تجيك مو فارغة.",Claude draft; reviewed by the author (native Iraqi speaker),heavy,yes,"MSA corrected: ""نعم"" -> ""YES""; ""لا"" -> ""NO"""
+python/51,reverse_delete,"Task
+    We are given two strings s and c, you have to deleted all the characters in s that are equal to any character in c
+    then check if the result string is palindrome.
+    A string is called palindrome if it reads the same backward as forward.
+    You should return a tuple containing the result string and True/False for the check.
+    Example
+    For s = ""abcde"", c = ""ae"", the result should be ('bcd',False)
+    For s = ""abcdef"", c = ""b""  the result should be ('acdef',False)
+    For s = ""abcdedcba"", c = ""ab"", the result should be ('cdedc',True)","المهمة
+نحن نحصل على سلسلتين s و c ، يجب عليك حذف جميع الأحرف في s التي تساوي أي حرف في c
+ثم التحقق مما إذا كانت سلسلة النتيجة هي palindrome.
+يسمى سلسلة palindrome إذا قرأت بالمعكوس نفسها.
+يجب عليك إرجاع tuple يحتوي على سلسلة النتيجة و True / False للتحقق.
+مثال
+بالنسبة لـ s = ""abcde"" ، c = ""ae"" ، يجب أن يكون النتيجة ('bcd'،False)
+بالنسبة لـ s = ""abcdef"" ، c = ""b"" يجب أن يكون النتيجة ('acdef'،False)
+بالنسبة لـ s = ""abcdedcba"" ، c = ""ab"" يجب أن يكون النتيجة ('cdedc'،True)",,,"المطلوب
+عدنا سترنكين s و c، لازم تمسح كل حرف بـ s يطابق أي حرف موجود بـ c،
+وبعدين تشوف السترنك اللي يبقى palindrome لو لا.
+السترنك يكون palindrome إذا تقراه من الآخر يطلع نفسه.
+لازم ترجّع tuple بيه السترنك اللي بقى و True/False حسب الفحص.
+مثال
+إذا s = ""abcde"" و c = ""ae""، النتيجة لازم تكون ('bcd',False)
+إذا s = ""abcdef"" و c = ""b""، النتيجة لازم تكون ('acdef',False)
+إذا s = ""abcdedcba"" و c = ""ab""، النتيجة لازم تكون ('cdedc',True)",Claude draft; reviewed by the author (native Iraqi speaker),heavy,yes,
+python/52,max_fill,"You are given a rectangular grid of wells. Each row represents a single well,
+    and each 1 in a row represents a single unit of water.
+    Each well has a corresponding bucket that can be used to extract water from it, 
+    and all buckets have the same capacity.
+    Your task is to use the buckets to empty the wells.
+    Output the number of times you need to lower the buckets.
+
+    Example 1:
+        Input: 
+            grid : [[0,0,1,0], [0,1,0,0], [1,1,1,1]]
+            bucket_capacity : 1
+        Output: 6
+
+    Example 2:
+        Input: 
+            grid : [[0,0,1,1], [0,0,0,0], [1,1,1,1], [0,1,1,1]]
+            bucket_capacity : 2
+        Output: 5
+    
+    Example 3:
+        Input: 
+            grid : [[0,0,0], [0,0,0]]
+            bucket_capacity : 5
+        Output: 0
+
+    Constraints:
+        * all wells have the same length
+        * 1 <= grid.length <= 10^2
+        * 1 <= grid[:,1].length <= 10^2
+        * grid[i][j] -> 0 | 1
+        * 1 <= capacity <= 10","يتم تزويدك بشبكة مستطيلة من الآبار. تمثل كل صف بئرًا ويمثل الرقم 1 في الصف وحدة واحدة من الماء. لكل بئر دلو مقابل يمكن استخدامه لاستخراج الماء منه، وجميع الدلاء لديها نفس السعة. مهمتك هي استخدام الدلاء لتفريغ الآبار. أخرج عدد المرات التي تحتاج فيها إلى خفض الدلاء.
+
+    مثال 1:
+    المدخلات:
+        grid: [[0،0،1،0]، [0،1،0،0]، [1،1،1،1]]
+        bucket_capacity: 1
+    الناتج: 6
+
+    مثال 2:
+    المدخلات:
+        grid: [[0،0،1،1]، [0،0،0،0]، [1،1،1،1]، [0،1،1،1]]
+        bucket_capacity: 2
+    الناتج: 5
+
+    مثال 3:
+    المدخلات:
+        grid: [[0،0،0]، [0،0،0]]
+        bucket_capacity: 5
+    الناتج: 0
+
+    القيود:
+    * جميع الآبار لديها نفس الطول
+    * 1 <= grid.length <= 10^2
+    * 1 <= grid [:،1].length <= 10^2
+    * grid [i] [j] -> 0 | 1
+    * 1 <= capacity <= 10",,,"عندك شبكة مستطيلة من الآبار. كل صف يمثل بير واحد، وكل 1 بالصف يعني وحدة مي. كل بير إله سطل تكدر تطلّع بيه المي، وكل السطول نفس السعة. شغلك تفرّغ الآبار بالسطول. طلّع شكد مرة لازم تنزّل السطول.
+
+    مثال 1:
+    المدخل:
+        grid: [[0,0,1,0], [0,1,0,0], [1,1,1,1]]
+        bucket_capacity: 1
+    الناتج: 6
+
+    مثال 2:
+    المدخل:
+        grid: [[0,0,1,1], [0,0,0,0], [1,1,1,1], [0,1,1,1]]
+        bucket_capacity: 2
+    الناتج: 5
+
+    مثال 3:
+    المدخل:
+        grid: [[0,0,0], [0,0,0]]
+        bucket_capacity: 5
+    الناتج: 0
+
+    الشروط:
+    * كل الآبار نفس الطول
+    * 1 <= grid.length <= 10^2
+    * 1 <= grid[:,1].length <= 10^2
+    * grid[i][j] -> 0 | 1
+    * 1 <= capacity <= 10",Claude draft; reviewed by the author (native Iraqi speaker),heavy,yes,
+python/53,select_words,"Given a string s and a natural number n, you have been tasked to implement 
+    a function that returns a list of all words from string s that contain exactly 
+    n consonants, in order these words appear in the string s.
+    If the string s is empty then the function should return an empty list.
+    Note: you may assume the input string contains only letters and spaces.
+    Examples:
+    select_words(""Mary had a little lamb"", 4) ==> [""little""]
+    select_words(""Mary had a little lamb"", 3) ==> [""Mary"", ""lamb""]
+    select_words(""simple white space"", 2) ==> []
+    select_words(""Hello world"", 4) ==> [""world""]
+    select_words(""Uncle sam"", 3) ==> [""Uncle""]","بالنظر إلى سلسلة s وعدد طبيعي n، تم تكليفك بتنفيذ وظيفة تعيد قائمة بجميع الكلمات من السلسلة s التي تحتوي بالضبط على n حروف ساكنة، بالترتيب الذي تظهر به هذه الكلمات في السلسلة s. إذا كانت السلسلة s فارغة ، يجب أن تعيد الوظيفة قائمة فارغة. ملاحظة: يمكنك الافتراض بأن سلسلة الإدخال تحتوي فقط على الحروف والمسافات.
+    أمثلة:",,,"ينطوك سترنك s ورقم طبيعي n، والمطلوب تسوي فنكشن ترجّع ليستة بكل الكلمات اللي بالسترنك s وبيها بالضبط n حروف ساكنة، وبنفس ترتيب ظهورها بالسترنك. إذا s فارغ، الفنكشن ترجّع ليستة فارغة. ملاحظة: اعتبر إن السترنك بيه بس حروف ومسافات.
+    أمثلة:",Claude draft; reviewed by the author (native Iraqi speaker),medium,yes,MSA corrected: تم تكليفك بتنفيذ وظيفة -> بالنظر إلى سلسلة s وعدد طبيعي n، تم تكليفك بتنفيذ وظيفة
+python/54,maximum,"Given an array arr of integers and a positive integer k, return a sorted list 
+    of length k with the maximum k numbers in arr.
+
+    Example 1:
+
+        Input: arr = [-3, -4, 5], k = 3
+        Output: [-4, -3, 5]
+
+    Example 2:
+
+        Input: arr = [4, -4, 4], k = 2
+        Output: [4, 4]
+
+    Example 3:
+
+        Input: arr = [-3, 2, 1, 2, -1, -2, 1], k = 1
+        Output: [2]
+
+    Note:
+        1. The length of the array will be in the range of [1, 1000].
+        2. The elements in the array will be in the range of [-1000, 1000].
+        3. 0 <= k <= len(arr)","بالنظر إلى مصفوفة arr من الأعداد الصحيحة وعدد صحيح موجب k ، يتم إرجاع قائمة مرتبة بطول k مع أكبر k أرقام في arr.
+
+        مثال 1:
+
+            المدخلات: arr = [-3، -4، 5]، k = 3
+        الناتج: [-4، -3، 5]
+
+        مثال 2:
+
+            المدخلات: arr = [4، -4، 4]، k = 2
+        الناتج: [4، 4]
+
+        مثال 3:
+
+            المدخلات: arr = [-3، 2، 1، 2، -1، -2، 1]، k = 1
+        الناتج: [2]
+
+        ملاحظة:
+        1. سيكون طول المصفوفة في نطاق [1، 1000].
+        2. ستكون العناصر في المصفوفة في نطاق [-1000، 1000].
+        3. 0 <= k <= len (arr)",,,"ينطوك array اسمها arr بيها أرقام صحيحة، ورقم صحيح موجب k، رجّع ليستة مرتبة طولها k بيها أكبر k أرقام من arr.
+
+        مثال 1:
+
+            المدخل: arr = [-3, -4, 5], k = 3
+        الناتج: [-4, -3, 5]
+
+        مثال 2:
+
+            المدخل: arr = [4, -4, 4], k = 2
+        الناتج: [4, 4]
+
+        مثال 3:
+
+            المدخل: arr = [-3, 2, 1, 2, -1, -2, 1], k = 1
+        الناتج: [2]
+
+        ملاحظة:
+        1. طول الـ array يكون بين 1 و 1000.
+        2. الأرقام اللي بالـ array تكون بين -1000 و 1000.
+        3. 0 <= k <= len(arr)",Claude draft; reviewed by the author (native Iraqi speaker),heavy,yes,
+python/55,add_elements,"Given a non-empty array of integers arr and an integer k, return
+    the sum of the elements with at most two digits from the first k elements of arr.
+
+    Example:
+
+        Input: arr = [111,21,3,4000,5,6,7,8,9], k = 4
+        Output: 24 # sum of 21 + 3
+
+    Constraints:
+        1. 1 <= len(arr) <= 100
+        2. 1 <= k <= len(arr)","عندما يتم إعطاء مصفوفة غير فارغة من الأعداد الصحيحة arr وعدد صحيح k ، يتم إرجاع مجموع العناصر التي لديها رقمين على الأكثر من أول k عنصرًا في arr.
+
+        مثال:
+
+            المدخلات: arr = [111،21،3،4000،5،6،7،8،9] ، k = 4
+        الإخراج: 24 # مجموع 21 + 3
+
+        القيود:
+        1. 1 <= len(arr) <= 100
+        2. 1 <= k <= len(arr)",,,"ينطوك array مو فارغة بيها أرقام صحيحة arr ورقم صحيح k، رجّع مجموع الأرقام اللي بيها خانتين أو أقل، بس من أول k عناصر بالـ arr.
+
+        مثال:
+
+            المدخل: arr = [111,21,3,4000,5,6,7,8,9], k = 4
+        الناتج: 24 # مجموع 21 + 3
+
+        الشروط:
+        1. 1 <= len(arr) <= 100
+        2. 1 <= k <= len(arr)",Claude draft; reviewed by the author (native Iraqi speaker),heavy,yes,
+python/56,intersection,"You are given two intervals,
+    where each interval is a pair of integers. For example, interval = (start, end) = (1, 2).
+    The given intervals are closed which means that the interval (start, end)
+    includes both start and end.
+    For each given interval, it is assumed that its start is less or equal its end.
+    Your task is to determine whether the length of intersection of these two 
+    intervals is a prime number.
+    Example, the intersection of the intervals (1, 3), (2, 4) is (2, 3)
+    which its length is 1, which not a prime number.
+    If the length of the intersection is a prime number, return ""YES"",
+    otherwise, return ""NO"".
+    If the two intervals don't intersect, return ""NO"".
+
+
+    [input/output] samples:
+    intersection((1, 2), (2, 3)) ==> ""NO""
+    intersection((-1, 1), (0, 4)) ==> ""NO""
+    intersection((-3, -1), (-5, 5)) ==> ""YES""","يتم تزويدك بنطاقين،
+حيث يتكون كل نطاق من زوج من الأعداد الصحيحة. على سبيل المثال، النطاق = (البداية، النهاية) = (1، 2).
+النطاقات المعطاة مغلقة مما يعني أن النطاق (البداية، النهاية)
+يشمل كل من البداية والنهاية.
+يفترض لكل نطاق معطى أن بدايته أقل أو يساوي نهايته.
+مهمتك هي تحديد ما إذا كان طول تقاطع هذين النطاقين هو عدد أولي.
+على سبيل المثال، تقاطع النطاقات (1، 3)، (2، 4) هو (2، 3)
+الذي يبلغ طوله 1، وهو ليس عددًا أوليًا.
+إذا كان طول التقاطع عددًا أوليًا، فأرجع ""YES""،
+وإلا، أرجع ""NO"".
+إذا لم يتقاطع النطاقان، فأرجع ""NO"".
+
+    [المدخلات/المخرجات] الأمثلة:",,,"ينطوك مجالين،
+كل مجال عبارة عن زوج أرقام صحيحة. مثلاً، المجال = (البداية، النهاية) = (1, 2).
+المجالات مغلقة، يعني المجال (البداية، النهاية)
+يدخل بيه البداية والنهاية.
+واعتبر إن بداية كل مجال أصغر من أو تساوي نهايته.
+شغلك تشوف طول التقاطع بين المجالين عدد أولي لو لا.
+مثلاً، تقاطع (1, 3) و (2, 4) هو (2, 3)
+وطوله 1، و1 مو عدد أولي.
+إذا طول التقاطع عدد أولي رجّع ""YES""،
+وإذا لا رجّع ""NO"".
+وإذا المجالين ما يتقاطعون أصلاً رجّع ""NO"".
+
+    أمثلة [المدخل/الناتج]:",Claude draft; reviewed by the author (native Iraqi speaker),medium,yes,"MSA corrected: ""نعم"" -> ""YES""; ""لا"" -> ""NO"""
+python/57,tri,"Everyone knows Fibonacci sequence, it was studied deeply by mathematicians in 
+    the last couple centuries. However, what people don't know is Tribonacci sequence.
+    Tribonacci sequence is defined by the recurrence:
+    tri(1) = 3
+    tri(n) = 1 + n / 2, if n is even.
+    tri(n) =  tri(n - 1) + tri(n - 2) + tri(n + 1), if n is odd.
+    For example:
+    tri(2) = 1 + (2 / 2) = 2
+    tri(4) = 3
+    tri(3) = tri(2) + tri(1) + tri(4)
+           = 2 + 3 + 3 = 8 
+    You are given a non-negative integer number n, you have to a return a list of the 
+    first n + 1 numbers of the Tribonacci sequence.
+    Examples:
+    tri(3) = [1, 3, 2, 8]","الجميع يعرف سلسلة فيبوناتشي، وقد درسها الرياضيون بعمق في القرون القليلة الماضية. ومع ذلك، ما لا يعرفه الناس هو سلسلة تريبوناتشي. تعرف سلسلة تريبوناتشي بالتكرار:
+tri(1) = 3
+tri(n) = 1 + n / 2، إذا كان n زوجيًا.
+tri(n) = tri(n - 1) + tri(n - 2) + tri(n + 1)، إذا كان n فرديًا.
+على سبيل المثال:
+tri(2) = 1 + (2 / 2) = 2
+tri(4) = 3
+tri(3) = tri(2) + tri(1) + tri(4)
+= 2 + 3 + 3 = 8
+يتم إعطاؤك عدد صحيح غير سلبي n ، ويجب عليك إرجاع قائمة بأول n + 1 عددًا في سلسلة تريبوناتشي.
+أمثلة:
+tri(3) = [1، 3، 2، 8]",,,"كلنا نعرف متسلسلة فيبوناتشي، وعلماء الرياضيات درسوها هواية بالقرون اللي فاتت. بس اللي الناس ما يعرفوه هي متسلسلة تريبوناتشي. تريبوناتشي تنعرف هيج:
+tri(1) = 3
+tri(n) = 1 + n / 2، إذا n زوجي.
+tri(n) = tri(n - 1) + tri(n - 2) + tri(n + 1)، إذا n فردي.
+مثلاً:
+tri(2) = 1 + (2 / 2) = 2
+tri(4) = 3
+tri(3) = tri(2) + tri(1) + tri(4)
+= 2 + 3 + 3 = 8
+ينطوك رقم صحيح مو سالب n، ولازم ترجّع ليستة بيها أول n + 1 أرقام من متسلسلة تريبوناتشي.
+أمثلة:
+tri(3) = [1, 3, 2, 8]",Claude draft; reviewed by the author (native Iraqi speaker),medium,yes,
+python/58,digits,"Given a positive integer n, return the product of the odd digits.
+    Return 0 if all digits are even.
+    For example:
+    digits(1)  == 1
+    digits(4)  == 0
+    digits(235) == 15","بالنظر إلى عدد صحيح موجب n، يتم إرجاع حاصل ضرب الأرقام الفردية.
+إذا كانت جميع الأرقام زوجية، يتم إرجاع القيمة 0.
+على سبيل المثال:",,,"ينطوك رقم صحيح موجب n، رجّع حاصل ضرب الخانات الفردية مالته.
+إذا كل الخانات زوجية، رجّع 0.
+مثلاً:",Claude draft; reviewed by the author (native Iraqi speaker),medium,yes,
+python/59,is_nested,"Create a function that takes a string as input which contains only square brackets.
+    The function should return True if and only if there is a valid subsequence of brackets 
+    where at least one bracket in the subsequence is nested.
+
+    is_nested('[[]]') ➞ True
+    is_nested('[]]]]]]][[[[[]') ➞ False
+    is_nested('[][]') ➞ False
+    is_nested('[]') ➞ False
+    is_nested('[[][]]') ➞ True
+    is_nested('[[]][[') ➞ True","أنشئ دالة تأخذ سلسلة نصية كمدخلات تحتوي فقط على أقواس مربعة.
+يجب أن تعيد الدالة True إذا وفقط إذا كان هناك متتالية صحيحة من الأقواس
+حيث يكون قوس واحد على الأقل في المتتالية متداخلاً (داخل قوس آخر).",,,سوّي فنكشن تاخذ سترنك بيه بس أقواس مربعة. الفنكشن ترجّع True بس إذا اكو تسلسل صحيح من الأقواس، ويكون بيه على الأقل قوس واحد داخل قوس ثاني (متداخل). غير هيج ترجّع False.,Claude draft; reviewed by the author (native Iraqi speaker),heavy,yes,MSA corrected: حيث يتم تضمين على الأقل قوس واحد في المتتالية. -> حيث يكون قوس واحد على الأقل في المتتالية متداخلاً (داخل قوس آخر).
+python/60,sum_squares,"You are given a list of numbers.
+    You need to return the sum of squared numbers in the given list,
+    round each element in the list to the upper int(Ceiling) first.
+    Examples:
+    For lst = [1,2,3] the output should be 14
+    For lst = [1,4,9] the output should be 98
+    For lst = [1,3,5,7] the output should be 84
+    For lst = [1.4,4.2,0] the output should be 29
+    For lst = [-2.4,1,1] the output should be 6","تمنحك قائمة من الأرقام.
+تحتاج إلى إرجاع مجموع الأرقام المربعة في القائمة المعطاة،
+قم بتقريب كل عنصر في القائمة إلى العدد الصحيح الأعلى (السقف) أولاً.
+أمثلة:
+للقائمة = [1،2،3] يجب أن يكون الإخراج 14
+للقائمة = [1،4،9] يجب أن يكون الإخراج 98
+للقائمة = [1،3،5،7] يجب أن يكون الإخراج 84
+للقائمة = [1.4،4.2،0] يجب أن يكون الإخراج 29
+للقائمة = [-2.4،1،1] يجب أن يكون الإخراج 6",,,"ينطوك ليستة أرقام.
+لازم ترجّع مجموع مربعات الأرقام اللي بالليستة،
+بس أول شي قرّب كل رقم للرقم الصحيح اللي فوكه (ceiling).
+أمثلة:
+إذا lst = [1,2,3] الناتج لازم يكون 14
+إذا lst = [1,4,9] الناتج لازم يكون 98
+إذا lst = [1,3,5,7] الناتج لازم يكون 84
+إذا lst = [1.4,4.2,0] الناتج لازم يكون 29
+إذا lst = [-2.4,1,1] الناتج لازم يكون 6",Claude draft; reviewed by the author (native Iraqi speaker),medium,yes,
+python/61,check_if_last_char_is_a_letter,"Create a function that returns True if the last character
+    of a given string is an alphabetical character and is not
+    a part of a word, and False otherwise.
+    Note: ""word"" is a group of characters separated by space.
+
+    Examples:
+    check_if_last_char_is_a_letter(""apple pie"") ➞ False
+    check_if_last_char_is_a_letter(""apple pi e"") ➞ True
+    check_if_last_char_is_a_letter(""apple pi e "") ➞ False
+    check_if_last_char_is_a_letter("""") ➞ False","أنشئ دالة تعيد True إذا كان الحرف الأخير في السلسلة المعطاة حرفًا أبجديًا وليس جزءًا من كلمة، وتعيد False في الحالة الأخرى.
+ملاحظة: ""الكلمة"" هي مجموعة من الأحرف مفصولة بمسافة.
+
+    أمثلة:",,,"سوّي فنكشن ترجّع True إذا آخر حرف بالسترنك حرف أبجدي وما يكون جزء من كلمة، وغير هيج ترجّع False.
+ملاحظة: ""الكلمة"" يعني مجموعة حروف مفصولة بمسافة.
+
+    أمثلة:",Claude draft; reviewed by the author (native Iraqi speaker),medium,yes,literal_warning checked: English literals are in the examples; no change
+python/62,can_arrange,"Create a function which returns the largest index of an element which
+    is not greater than or equal to the element immediately preceding it. If
+    no such element exists then return -1. The given array will not contain
+    duplicate values.
+
+    Examples:
+    can_arrange([1,2,4,3,5]) = 3
+    can_arrange([1,2,3]) = -1","أنشئ دالة تعيد أكبر فهرس لعنصر لا يزيد عن العنصر الذي يسبقه. إذا لم يوجد عنصر كهذا ، فأرجع -1. لن يحتوي المصفوفة المعطاة على قيم مكررة.
+
+        أمثلة:",,,"سوّي فنكشن ترجّع أكبر index لعنصر يكون أصغر من العنصر اللي قبله مباشرةً. إذا ماكو هيج عنصر رجّع -1. الـ array ما بيها قيم مكررة.
+
+        أمثلة:",Claude draft; reviewed by the author (native Iraqi speaker),heavy,yes,
+python/63,largest_smallest_integers,"Create a function that returns a tuple (a, b), where 'a' is
+    the largest of negative integers, and 'b' is the smallest
+    of positive integers in a list.
+    If there is no negative or positive integers, return them as None.
+
+    Examples:
+    largest_smallest_integers([2, 4, 1, 3, 5, 7]) == (None, 1)
+    largest_smallest_integers([]) == (None, None)
+    largest_smallest_integers([0]) == (None, None)","أنشئ دالة تعيد tuple (a، b) ، حيث يكون 'a' هو أكبر الأعداد الصحيحة السالبة ، و 'b' هو أصغر الأعداد الصحيحة الموجبة في القائمة. إذا لم يكن هناك أعداد صحيحة سالبة أو موجبة ، فأرجعها كـ None.
+
+        Examples:",,,"سوّي فنكشن ترجّع tuple (a, b)، الـ 'a' يكون أكبر رقم صحيح سالب، والـ 'b' أصغر رقم صحيح موجب بالليستة. إذا ماكو أرقام سالبة أو موجبة، رجّعهم None.
+
+        Examples:",Claude draft; reviewed by the author (native Iraqi speaker),medium,yes,
+python/64,special_factorial,"The Brazilian factorial is defined as:
+    brazilian_factorial(n) = n! * (n-1)! * (n-2)! * ... * 1!
+    where n > 0
+
+    For example:
+    >>> special_factorial(4)
+    288
+
+    The function will receive an integer as input and should return the special
+    factorial of this integer.","العامل البرازيلي يعرف على أنه:
+    brazilian_factorial(n) = n! * (n-1)! * (n-2)! * ... * 1!
+    حيث n > 0
+
+        على سبيل المثال:",,,"الـ factorial البرازيلي ينعرف هيج:
+    brazilian_factorial(n) = n! * (n-1)! * (n-2)! * ... * 1!
+    بشرط n > 0
+
+        مثلاً:",Claude draft; reviewed by the author (native Iraqi speaker),medium,yes,
+python/65,words_in_sentence,"You are given a string representing a sentence,
+    the sentence contains some words separated by a space,
+    and you have to return a string that contains the words from the original sentence,
+    whose lengths are prime numbers,
+    the order of the words in the new string should be the same as the original one.
+
+    Example 1:
+        Input: sentence = ""This is a test""
+        Output: ""is""
+
+    Example 2:
+        Input: sentence = ""lets go for swimming""
+        Output: ""go for""
+
+    Constraints:
+        * 1 <= len(sentence) <= 100
+        * sentence contains only letters","يتم تزويدك بسلسلة تمثل جملة،
+الجملة تحتوي على بعض الكلمات المفصولة بمسافة،
+ويجب عليك إرجاع سلسلة تحتوي على الكلمات من الجملة الأصلية،
+التي تحتوي على أعداد أولية من الأحرف،
+يجب أن يكون ترتيب الكلمات في السلسلة الجديدة هو نفس الترتيب الأصلي.
+
+    مثال 1:
+    المدخلات: الجملة = ""This is a test""
+    الناتج: ""is""
+
+    مثال 2:
+    المدخلات: الجملة = ""lets go for swimming""
+    الناتج: ""go for""
+
+    القيود:
+    * 1 <= len(sentence) <= 100
+    * تحتوي الجملة على أحرف فقط",,,"ينطوك سترنك بيه جملة،
+الجملة بيها كم كلمة مفصولة بمسافة،
+ولازم ترجّع سترنك بيه الكلمات من الجملة الأصلية
+اللي طولها عدد أولي،
+وترتيب الكلمات بالسترنك الجديد يبقى نفس الترتيب الأصلي.
+
+    مثال 1:
+    المدخل: sentence = ""This is a test""
+    الناتج: ""is""
+
+    مثال 2:
+    المدخل: sentence = ""lets go for swimming""
+    الناتج: ""go for""
+
+    الشروط:
+    * 1 <= len(sentence) <= 100
+    * الجملة بيها بس حروف",Claude draft; reviewed by the author (native Iraqi speaker),medium,yes,
+python/66,simplify,"Your task is to implement a function that will simplify the expression
+    x * n. The function returns True if x * n evaluates to a whole number and False
+    otherwise. Both x and n, are string representation of a fraction, and have the following format,
+    <numerator>/<denominator> where both numerator and denominator are positive whole numbers.
+
+    You can assume that x, and n are valid fractions, and do not have zero as denominator.
+
+    simplify(""1/5"", ""5/1"") = True
+    simplify(""1/6"", ""2/1"") = False
+    simplify(""7/10"", ""10/2"") = False","مهمتك هي تنفيذ وظيفة ستبسط التعبير
+x * n. تعيد الوظيفة True إذا كان x * n يقيم إلى عدد صحيح و False
+إلا في ذلك. كل من x و n هما تمثيل سلسلة لكسر ، ولهما التنسيق التالي ،
+<البسط>/<المقام> حيث كل من البسط والمقام هما أعداد صحيحة موجبة.
+
+    يمكنك الافتراض أن x و n هما كسور صالحة ، ولا يحتويان على الصفر كمقام.",,,"شغلك تسوي فنكشن تبسّط الضرب x * n. الفنكشن ترجّع True إذا ناتج x * n طلع رقم صحيح، وإذا لا ترجّع False. الـ x والـ n كل واحد منهم كسر مكتوب كسترنك بهالشكل: <البسط>/<المقام>، والبسط والمقام أرقام صحيحة موجبة.
+
+    تكدر تعتبر إن x و n كسور صحيحة، وما بيهم صفر بالمقام.",Claude draft; reviewed by the author (native Iraqi speaker),medium,yes,
+python/67,order_by_points,"Write a function which sorts the given list of integers
+    in ascending order according to the sum of their digits.
+    Note: if there are several items with similar sum of their digits,
+    order them based on their index in original list.
+
+    For example:
+    >>> order_by_points([1, 11, -1, -11, -12]) == [-1, -11, 1, -12, 11]
+    >>> order_by_points([]) == []","اكتب دالة تقوم بفرز القائمة المعطاة من الأعداد الصحيحة بترتيب تصاعدي وفقًا لمجموع أرقامها. ملاحظة: إذا كان هناك عدة عناصر بمجموع أرقام مماثل ، فقم بترتيبها بناءً على مؤشرها في القائمة الأصلية.
+
+    على سبيل المثال:",,,"اكتب فنكشن ترتّب ليستة الأرقام الصحيحة تصاعدي حسب مجموع خاناتها. ملاحظة: إذا اكو كم رقم مجموع خاناتهم نفس الشي، رتّبهم حسب مكانهم بالليستة الأصلية.
+
+    مثلاً:",Claude draft; reviewed by the author (native Iraqi speaker),medium,yes,
+python/68,specialFilter,"Write a function that takes an array of numbers as input and returns 
+    the number of elements in the array that are greater than 10 and both 
+    first and last digits of a number are odd (1, 3, 5, 7, 9).
+    For example:
+    specialFilter([15, -73, 14, -15]) => 1 
+    specialFilter([33, -2, -3, 45, 21, 109]) => 2",اكتب دالة تأخذ مصفوفة من الأرقام كمدخلات وتعيد عدد العناصر في المصفوفة التي تزيد عن 10 وكلاً من الأرقام الأولى والأخيرة للعدد فردية (1، 3، 5، 7، 9). على سبيل المثال:,,,اكتب فنكشن تاخذ array أرقام وترجّع شكد عنصر بيها أكبر من 10، وأول خانة وآخر خانة بالرقم كلهن فردية (1، 3، 5، 7، 9). مثلاً:,Claude draft; reviewed by the author (native Iraqi speaker),heavy,yes,
+python/69,get_max_triples,"You are given a positive integer n. You have to create an integer array a of length n.
+        For each i (1 ≤ i ≤ n), the value of a[i] = i * i - i + 1.
+        Return the number of triples (a[i], a[j], a[k]) of a where i < j < k, 
+    and a[i] + a[j] + a[k] is a multiple of 3.
+
+    Example :
+        Input: n = 5
+        Output: 1
+        Explanation: 
+        a = [1, 3, 7, 13, 21]
+        The only valid triple is (1, 7, 13).","تمنحك عدد صحيح موجب n. يجب عليك إنشاء مصفوفة صحيحة a طولها n.
+        بالنسبة لكل i (1 ≤ i ≤ n) ، قيمة a [i] = i * i - i + 1.
+        إرجاع عدد الثلاثيات (a [i]، a [j]، a [k]) من a حيث i <j <k ،
+    و a [i] + a [j] + a [k] هو مضاعف للعدد 3.
+
+        مثال:
+        المدخلات: n = 5
+        الناتج: 1
+        شرح:
+        a = [1، 3، 7، 13، 21]
+        الثلاثية الوحيدة الصالحة هي (1، 7، 13).",,,"ينطوك رقم صحيح موجب n. لازم تسوي array اسمها a طولها n.
+        لكل i (من 1 لحد n)، قيمة a[i] = i * i - i + 1.
+        رجّع شكد اكو ثلاثيات (a[i], a[j], a[k]) من a بحيث i < j < k،
+    ومجموعهم a[i] + a[j] + a[k] يقبل القسمة على 3.
+
+        مثال:
+        المدخل: n = 5
+        الناتج: 1
+        الشرح:
+        a = [1, 3, 7, 13, 21]
+        الثلاثية الوحيدة اللي تمشي هي (1, 7, 13).",Claude draft; reviewed by the author (native Iraqi speaker),medium,yes,
+python/70,bf,"There are eight planets in our solar system: the closerst to the Sun 
+    is Mercury, the next one is Venus, then Earth, Mars, Jupiter, Saturn, 
+    Uranus, Neptune.
+    Write a function that takes two planet names as strings planet1 and planet2. 
+    The function should return a tuple containing all planets whose orbits are 
+    located between the orbit of planet1 and the orbit of planet2, sorted by 
+    the proximity to the sun. 
+    The function should return an empty tuple if planet1 or planet2
+    are not correct planet names. 
+    Examples
+    bf(""Jupiter"", ""Neptune"") ==> (""Saturn"", ""Uranus"")
+    bf(""Earth"", ""Mercury"") ==> (""Venus"")
+    bf(""Mercury"", ""Uranus"") ==> (""Venus"", ""Earth"", ""Mars"", ""Jupiter"", ""Saturn"")","هناك ثمانية كواكب في نظامنا الشمسي: الأقرب إلى الشمس هو عطارد (Mercury)، الكوكب التالي هو الزهرة (Venus)، ثم الأرض (Earth)، المريخ (Mars)، المشتري (Jupiter)، زحل (Saturn)، أورانوس (Uranus)، نبتون (Neptune).
+اكتب دالة تأخذ اسمي كوكب كسلسلة نصية planet1 و planet2. يجب أن تعيد الدالة tuple يحتوي على جميع الكواكب التي تقع مداراتها بين مدار planet1 ومدار planet2، مرتبة حسب القرب من الشمس. يجب أن تعيد الدالة tuple فارغًا إذا كان planet1 أو planet2 ليستا أسماء كواكب صحيحة.
+أمثلة",,,"اكو ثمن كواكب بالمجموعة الشمسية: الأقرب للشمس عطارد (Mercury)، بعده الزهرة (Venus)، بعدين الأرض (Earth)، المريخ (Mars)، المشتري (Jupiter)، زحل (Saturn)، أورانوس (Uranus)، نبتون (Neptune).
+اكتب فنكشن تاخذ اسمين كواكب كسترنكات planet1 و planet2. الفنكشن ترجّع tuple بيه كل الكواكب اللي مداراتها بين مدار planet1 ومدار planet2، مرتبين حسب قربهم من الشمس. وإذا planet1 أو planet2 مو أسماء كواكب صحيحة، ترجّع tuple فارغ.
+أمثلة",Claude draft; reviewed by the author (native Iraqi speaker),medium,yes,MSA corrected: هو عطارد، الكوكب التالي هو الزهرة، ثم الأرض، المريخ، المشتري، زحل، أورانوس، نبتون -> هو عطارد (Mercury)، الكوكب التالي هو الزهرة (Venus)، ثم الأرض (Earth)، المريخ (Mars)، المشتري (Jupiter)، زحل (Saturn)، أورانوس (Uranus)، نبتون (Neptune); مدار كوكب1 ومدار كوكب2 -> مدار planet1 ومدار planet2
+python/71,x_or_y,"A simple program which should return the value of x if n is 
+    a prime number and should return the value of y otherwise.
+
+    Examples:
+    for x_or_y(7, 34, 12) == 34
+    for x_or_y(15, 8, 5) == 5","برنامج بسيط يجب أن يعيد قيمة x إذا كان n عددًا أولًا ويجب أن يعيد قيمة y في حالة أخرى.
+
+    أمثلة:",,,"برنامج بسيط يرجّع قيمة x إذا n عدد أولي، وإذا لا يرجّع قيمة y.
+
+    أمثلة:",Claude draft; reviewed by the author (native Iraqi speaker),light,yes,
+python/72,double_the_difference,"Given a list of numbers, return the sum of squares of the numbers
+    in the list that are odd. Ignore numbers that are negative or not integers.
+    
+    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10
+    double_the_difference([-1, -2, 0]) == 0
+    double_the_difference([9, -2]) == 81
+    double_the_difference([0]) == 0  
+   
+    If the input list is empty, return 0.","عندما يتم إعطاء قائمة من الأرقام، يتم إرجاع مجموع مربعات الأرقام في القائمة التي هي فردية. يتم تجاهل الأرقام التي هي سلبية أو غير صحيحة.
+
+    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10
+double_the_difference([-1, -2, 0]) == 0
+double_the_difference([9, -2]) == 81
+double_the_difference([0]) == 0
+
+    إذا كانت القائمة المدخلة فارغة، يتم إرجاع 0.",,,"ينطوك ليستة أرقام، رجّع مجموع مربعات الأرقام الفردية اللي بيها. الأرقام السالبة أو اللي مو صحيحة لا تحسبها.
+
+    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10
+double_the_difference([-1, -2, 0]) == 0
+double_the_difference([9, -2]) == 81
+double_the_difference([0]) == 0
+
+    وإذا الليستة فارغة رجّع 0.",Claude draft; reviewed by the author (native Iraqi speaker),medium,yes,
+python/73,Strongest_Extension,"You will be given the name of a class (a string) and a list of extensions.
+    The extensions are to be used to load additional classes to the class. The
+    strength of the extension is as follows: Let CAP be the number of the uppercase
+    letters in the extension's name, and let SM be the number of lowercase letters 
+    in the extension's name, the strength is given by the fraction CAP - SM. 
+    You should find the strongest extension and return a string in this 
+    format: ClassName.StrongestExtensionName.
+    If there are two or more extensions with the same strength, you should
+    choose the one that comes first in the list.
+    For example, if you are given ""Slices"" as the class and a list of the
+    extensions: ['SErviNGSliCes', 'Cheese', 'StuFfed'] then you should
+    return 'Slices.SErviNGSliCes' since 'SErviNGSliCes' is the strongest extension 
+    (its strength is -1).
+    Example:
+    for Strongest_Extension('my_class', ['AA', 'Be', 'CC']) == 'my_class.AA'","سيتم تزويدك بإسم الصف (سلسلة نصية) وقائمة من الامتدادات.
+يجب استخدام الامتدادات لتحميل صفوف إضافية إلى الصف. قوة الامتداد هي كما يلي: دع CAP يكون عدد الأحرف الكبيرة في اسم الامتداد، ودع SM يكون عدد الأحرف الصغيرة في اسم الامتداد، يتم إعطاء القوة بواسطة الكسر CAP - SM. يجب عليك العثور على الامتداد الأقوى وإرجاع سلسلة بهذا الشكل: ClassName.StrongestExtensionName.
+إذا كان هناك اثنين أو أكثر من الامتدادات بنفس القوة، يجب اختيار الذي يأتي أولاً في القائمة.
+على سبيل المثال، إذا تم تزويدك بـ ""Slices"" كصف وقائمة من الامتدادات: ['SErviNGSliCes'، 'Cheese'، 'StuFfed']، فيجب عليك إرجاع 'Slices.SErviNGSliCes' لأن 'SErviNGSliCes' هو الامتداد الأقوى (قوته -1).
+مثال:",,,"راح ينطوك اسم class (سترنك) وليستة extensions.
+الـ extensions نستعملها حتى نحمّل classes زايدة للـ class. قوة الـ extension تنحسب هيج: خلي CAP يكون عدد الحروف الكبيرة باسم الـ extension، و SM عدد الحروف الصغيرة، والقوة هي CAP - SM. لازم تلكى أقوى extension وترجّع سترنك بهالشكل: ClassName.StrongestExtensionName.
+إذا اكو اثنين أو أكثر بنفس القوة، اختار اللي يجي أول بالليستة.
+مثلاً، إذا انطوك ""Slices"" كـ class وليستة extensions: ['SErviNGSliCes', 'Cheese', 'StuFfed']، لازم ترجّع 'Slices.SErviNGSliCes' لأن 'SErviNGSliCes' هو الأقوى (قوته -1).
+مثال:",Claude draft; reviewed by the author (native Iraqi speaker),medium,yes,MSA corrected: بهذا الشكل: اسم الصف.اسم الامتداد الأقوى -> بهذا الشكل: ClassName.StrongestExtensionName
+python/74,cycpattern_check,"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word
+    cycpattern_check(""abcd"",""abd"") => False
+    cycpattern_check(""hello"",""ell"") => True
+    cycpattern_check(""whassup"",""psus"") => False
+    cycpattern_check(""abab"",""baa"") => True
+    cycpattern_check(""efef"",""eeff"") => False
+    cycpattern_check(""himenss"",""simen"") => True",يتم تزويدك بكلمتين. تحتاج إلى إرجاع True إذا كانت الكلمة الثانية أو أي من دوراناتها هي سلسلة فرعية (substring) في الكلمة الأولى.,,,ينطوك كلمتين. رجّع True إذا الكلمة الثانية، أو أي تدويرة إلها، موجودة كـ substring جوّه الكلمة الأولى.,Claude draft; reviewed by the author (native Iraqi speaker),medium,yes,MSA corrected: هي متعابدة في الكلمة الأولى -> هي سلسلة فرعية (substring) في الكلمة الأولى
+python/75,int_to_mini_roman,"Given a positive integer, obtain its roman numeral equivalent as a string,
+    and return it in lowercase.
+    Restrictions: 1 <= num <= 1000
+
+    Examples:
+    >>> int_to_mini_roman(19) == 'xix'
+    >>> int_to_mini_roman(152) == 'clii'
+    >>> int_to_mini_roman(426) == 'cdxxvi'","بالنظر إلى عدد صحيح موجب، احصل على ما يعادله من الأرقام الرومانية كسلسلة نصية، وارجعها بأحرف صغيرة.
+القيود: 1 <= num <= 1000
+
+    أمثلة:",,,"ينطوك رقم صحيح موجب، طلّع الرقم الروماني مالته كسترنك، ورجّعه بحروف صغيرة.
+الشروط: 1 <= num <= 1000
+
+    أمثلة:",Claude draft; reviewed by the author (native Iraqi speaker),medium,yes,literal_warning checked: English literals are in the examples; no change
+python/76,right_angle_triangle,"Given the lengths of the three sides of a triangle. Return True if the three
+    sides form a right-angled triangle, False otherwise.
+    A right-angled triangle is a triangle in which one angle is right angle or 
+    90 degree.
+    Example:
+    right_angle_triangle(3, 4, 5) == True
+    right_angle_triangle(1, 2, 3) == False",بالنظر إلى أطوال الأضلاع الثلاثة لمثلث. إرجاع قيمة صحيحة (True) إذا كانت الأضلاع الثلاثة تشكل مثلثاً قائم الزاوية، وإرجاع قيمة خاطئة (False) في الحالات الأخرى. يعتبر المثلث القائم الزاوية هو مثلث يحتوي على زاوية قائمة أو بزاوية 90 درجة. مثال:,,,ينطوك أطوال الأضلاع الثلاثة لمثلث. رجّع True إذا الأضلاع تسوي مثلث قائم الزاوية، وغير هيج رجّع False. المثلث القائم يعني بيه زاوية وحدة 90 درجة. مثال:,Claude draft; reviewed by the author (native Iraqi speaker),medium,yes,
+python/77,solve,"You are given a string s.
+    if s[i] is a letter, reverse its case from lower to upper or vise versa, 
+    otherwise keep it as it is.
+    If the string contains no letters, reverse the string.
+    The function should return the resulted string.
+    Examples
+    solve(""1234"") = ""4321""
+    solve(""ab"") = ""AB""
+    solve(""#a@C"") = ""#A@c""","تمنحك سلسلة s.
+    إذا كان s[i] حرفًا، فعكس حالته من الحروف الصغيرة إلى الحروف الكبيرة أو العكس،
+    وإلا فاحتفظ به كما هو.
+    إذا لم تحتوي السلسلة على أحرف، فعكس السلسلة.
+    يجب أن تعيد الدالة السلسلة الناتجة.
+    أمثلة",,,"ينطوك سترنك s.
+    إذا s[i] حرف، اقلب حالته، الصغير يصير كبير والكبير يصير صغير،
+    وإذا مو حرف خلّيه مثل ما هو.
+    وإذا السترنك ما بيه ولا حرف، اقلب السترنك كله بالمقلوب.
+    الفنكشن ترجّع السترنك اللي يطلع.
+    أمثلة",Claude draft; reviewed by the author (native Iraqi speaker),medium,yes,literal_warning checked: English literals are in the examples; no change
+python/78,string_to_md5,"Given a string 'text', return its md5 hash equivalent string.
+    If 'text' is an empty string, return null.
+
+    >>> string_to_md5('Hello world') == '3e25960a79dbc69b674cd4ec67a72c62'","بالنظر إلى سلسلة 'text'، أرجع سلسلة مكافئة لها بتشفير md5.
+إذا كانت 'text' فارغة، أرجع None.",,,"ينطوك سترنك 'text'، رجّع الـ md5 hash مالته كسترنك.
+إذا 'text' فارغ، رجّع None.",Claude draft; reviewed by the author (native Iraqi speaker),medium,yes,literal_warning checked: English literals are in the examples; no change | MSA corrected after pilot: أرجع قيمة فارغة -> أرجع None
+python/79,generate_integers,"Given two positive integers a and b, return the even digits between a
+    and b, in ascending order.
+
+    For example:
+    generate_integers(2, 8) => [2, 4, 6, 8]
+    generate_integers(8, 2) => [2, 4, 6, 8]
+    generate_integers(10, 14) => []","بالنظر إلى عددين صحيحين موجبين a و b، يتم إرجاع الأرقام الزوجية بين a و b بترتيب تصاعدي.
+
+    على سبيل المثال:",,,"ينطوك رقمين صحيحين موجبين a و b، رجّع الـ digits الزوجية اللي بينهم، مرتبة من الأصغر للأكبر.
+
+    مثلاً:",Claude draft; reviewed by the author (native Iraqi speaker),medium,yes,

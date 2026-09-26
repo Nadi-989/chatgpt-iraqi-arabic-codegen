@@ -1,0 +1,39 @@
+﻿task_id,iraqi_prompt,chatgpt_code,test_failure,annotator_1_category,annotator_2_category,agreed_category,example_note
+python/45,"[batch question 6]
+
+def choose_num(x, y):
+    """"""هاي الفنكشن تاخذ رقمين موجبين x و y، وترجّع أكبر رقم زوجي صحيح يوكع بين x و y، ويدخل وياهم x و y نفسهم. إذا ماكو هيج رقم، الفنكشن ترجّع -1.
+
+    مثلاً:
+    choose_num(12, 15) = 14
+    choose_num(13, 12) = -1
+    """"""
+","def choose_num(x, y):
+    lo, hi = sorted((x, y))
+    for num in range(hi, lo - 1, -1):
+        if num % 2 == 0:
+            return num
+    return -1",AssertionError,,,,
+python/47,"[batch question 49]
+
+def f(n):
+    """""" سوّي الفنكشن f اللي تاخذ n،
+وترجّع ليستة طولها n، بحيث قيمة العنصر بالـ index i تكون factorial الرقم i إذا i زوجي،
+وإذا فردي تكون مجموع الأرقام من 1 لحد i.
+الـ i يبدي من 1.
+الـ factorial مال i هو حاصل ضرب الأرقام من 1 لحد i (1 * 2 * ... * i).
+مثال:
+    f(5) == [1, 2, 6, 24, 15]
+    """"""
+","def f(n):
+    result = []
+    factorial = 1
+
+    for i in range(1, n + 1):
+        if i % 2 == 0:
+            factorial *= i
+            result.append(factorial)
+        else:
+            result.append(i * (i + 1) // 2)
+
+    return result",AssertionError,,,,
